@@ -47,8 +47,8 @@ class DetalleVenta(models.Model):
     fecharegistrodetalleventa = models.DateField(db_column='FechaRegistroDetalleVenta')  # Field name made lowercase.
 
 class Imagen(models.Model):
-    id_imagen = models.AutoField(db_column='ID_Imagen', primary_key=True)  # Field name made lowercase.
-    imagen = models.BinaryField(db_column='Imagen')  # Field name made lowercase.
+    id_imagen = models.IntegerField(db_column='ID_Imagen', primary_key=True)  # Field name made lowercase.
+    imagen = models.ImageField(upload_to='Imagen', blank=True, null=True)  # Field name made lowercase.
     nombre_imagen = models.CharField(db_column='Nombre_Imagen', max_length=100)  # Field name made lowercase.
 
 class MateriaPrima(models.Model):
