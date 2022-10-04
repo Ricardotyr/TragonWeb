@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!---LINK CSS-->
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="nav-main">
+                <img src="{% static 'imagenes/pagina/brand1.png' %}" alt="Tragón Ball Z" class="nav-brand">
+            </nav>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="productos.html">Productos</a>
+                <a href="promociones.html">Promociones</a>
+                <a href="delivery.html">Delivery</a>
+                <a href="nosotros.html">Nosotros</a>
+            </nav>
+            <form action="../../form-result.php" method="post" target="_blank">
+                <p>
+                  <input type="search" name="busquedaitem" pattern="[A-Za-z0-9]{8,20}" title="Un producto o promoción válida debe estar dentro de sus catálogos pertenecientes" required>
+                  <input type="submit" value="Buscar">
+                  <a href="{% url 'reg' %}">registrarse</a> &nbsp;&nbsp; | &nbsp;
+                </p>
+            </form>
+            <!---Iconos Login y Carro-->
+            <section id="iconos">
+                <a href="login.html" class="fa-solid fa-user"></a>
+                <a href="carro.html" class="fa-solid fa-cart-shopping"></a>
+            </section>
+        </div>
+    </header>
+    <hr>
+    <section class="form-register">
+        <form method="post">
+            <div class="container">
+                <h1>Regístrate</h1>
+                {% csrf_token %}
+                <br>
+                <input class="controls" type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre" maxlength="30" required>
+                <br>
+                <input class="controls" type="text" name="apellido" id="apellido" placeholder="Ingrese su apellido" maxlength="30" required>
+                <br>
+                <input class="controls" type="text" name="correo" id="correo" placeholder="Ingrese su correo electrónico" required>
+                <br>
+                <input class="controls" type="password" name="password" id="password" placeholder="Ingrese su contraseña" maxlength="16" required>
+                <br>
+                <input class="controls" type="text" name="telefono" id="telefono" placeholder="Ingrese su teléfono" maxlength="9" required>
+                <br>
+                <input class="controls" type="date" name="fecha" id="fecha" placeholder="Ingrese su fecha de nacimiento" required>
+                <p>Estoy de acuerdo con los <a href="">Terminos y condiciones</a></p>
+                <button type="submit">Registrarte</button>
+                &nbsp;&nbsp;
+                {% if messages %}
+                {% for msg in messages %}
+                <b>{{msg}}</b>
+                {% endfor %}
+                {% endif %}
+                <br>
+                <em>Si ya estas registrado <a href="">Ingresa</a></em>
+            </div>
+        </form>
+        <hr>
+    </section>
+    <hr>
+
+<footer class="pie-pagina">
+    <div class="grupo1">
+        <div class="box">
+            <figure>
+                <a href="">
+                    <img src="{% static 'imagenes/pagina/esfera.png' %}" alt="esfera">
+                </a>
+            </figure>
+        </div>
+
+        <div class="box">
+            <h2>Contacto</h2>
+            <div class="cont"></div>
+            <p>Correo electrónico:</p>
+            <a href="mailto:tragonballzpyme@gmail.com">tragonballzpyme@gmail.com</a>
+            <p>Número de teléfono:</p>
+            <a href= "tel:+56987654321">+569 8765 4321</a>
+            <p>Ponte en comunicación con nosotros!</p>
+        </div>
+
+        <div class="box">
+            <h2>Ayuda pedidos</h2>
+            <div class="ayuda">
+                <a href="delivery.html">Localizador de comunas</a>
+                <p></p>
+                <a href="">Carro de compras</a>
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <div class="grupo-2"></div>
+        <small>&copy; 2021 <b>Tragón Ball Z</b> - Todos los derechos reservados.</small>
+</footer>
+</body>
+</html>

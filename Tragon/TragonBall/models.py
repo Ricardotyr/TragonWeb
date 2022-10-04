@@ -10,7 +10,7 @@ class Categoria(models.Model):
         return self.id_categoria
 
 class Cliente(models.Model):
-    id_cliente = models.IntegerField(db_column='ID_Cliente', primary_key=True)  # Field name made lowercase.
+    id_cliente = models.AutoField(db_column='ID_Cliente', primary_key=True)  # Field name made lowercase.
     nombre_cliente = models.CharField(db_column='Nombre_Cliente', max_length=50)  # Field name made lowercase.
     apellido_cliente = models.CharField(db_column='Apellido_Cliente', max_length=50)  # Field name made lowercase.
     correo_cliente = models.CharField(db_column='Correo_Cliente', max_length=50)  # Field name made lowercase.
