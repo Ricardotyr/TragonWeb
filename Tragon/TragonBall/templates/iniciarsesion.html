@@ -3,9 +3,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <!---LINK CSS-->
     <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+
 </head>
 <body>
     <header>
@@ -35,39 +38,30 @@
         </div>
     </header>
     <hr>
-    <section class="form-register">
+    <section class="form-login">
         <form method="post">
             <div class="container">
-                <h1>Regístrate</h1>
+                <h1>Login</h1>
                 {% csrf_token %}
-                <br>
-                <input class="controls" type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre" maxlength="30" required>
-                <br>
-                <input class="controls" type="text" name="apellido" id="apellido" placeholder="Ingrese su apellido" maxlength="30" required>
                 <br>
                 <input class="controls" type="text" name="correo" id="correo" placeholder="Ingrese su correo electrónico" required>
                 <br>
                 <input class="controls" type="password" name="password" id="password" placeholder="Ingrese su contraseña" maxlength="16" required>
                 <br>
-                <input class="controls" type="text" name="telefono" id="telefono" placeholder="Ingrese su teléfono" maxlength="9" required>
-                <br>
-                <input class="controls" type="date" name="fecha" id="fecha" placeholder="Ingrese su fecha de nacimiento" required>
-                <p>Estoy de acuerdo con los <a href="">Terminos y condiciones</a></p>
-                <button type="submit">Registrarte</button>
+                <button type="submit">Iniciar Sesión</button>
                 &nbsp;&nbsp;
                 {% if messages %}
-                {% for msg in messages %}
-                <b>{{msg}}</b>
-                {% endfor %}
-                {% endif %}
+                    {% for msg in messages %}
+                    <b>{{msg}}</b>
+                    {% endfor %}
+                    {% endif %}
                 <br>
-                <em>Si ya estas registrado <a href="{% url 'paginaLogin' %}">Ingresa</a></em>
+                <em>Si no estás registrado,<a href="{% url 'reg' %}">Regístrate</a></em>
             </div>
         </form>
         <hr>
     </section>
     <hr>
-
 <footer class="pie-pagina">
     <div class="grupo1">
         <div class="box">

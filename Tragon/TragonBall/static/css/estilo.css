@@ -1,0 +1,791 @@
+*{
+    box-sizing: border-box;
+}
+
+/*PAGINA WEB MOBILE*/
+
+/*BODY*/
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav-brand{
+    width: 300px;
+}
+
+/*H*/
+h1{font-size: 3.5em;}
+h2{font-size: 2.7;}
+h3{font-size: 2em;}
+p{font-size: 1.25em;}
+
+/*Botones*/
+button{
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 10 px rgba(0,0,0,0.5);
+    color: black;
+    background-color: yellow;
+}
+
+button:hover{
+    background-color: red;
+}
+
+/*container*/
+.container{
+    max-width: 1400px;
+    margin: auto;
+}
+
+/*header*/
+.header{
+    background-color: #ffff;
+}
+
+header .logo{
+    margin: 0;
+    padding: 25px 30px;
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+header .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+header a{
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+header a:hover{
+    color: red;
+}
+
+/*HERO*/
+#hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 70vh;
+    color: white;
+    background-repeat: none;
+    background-size: cover;
+    background-position: center center;
+}
+
+.goku{
+    width: 100%;
+    height: 550;
+}
+
+
+/*PROMOCIONES*/
+#promociones{
+    color: black;
+    text-align: center;
+}
+
+#promociones .container{
+    padding: 20px 0px;
+}
+
+#promociones p{
+    display: none;
+    color: black;
+}
+
+#promociones h2{
+    margin-top: 0;
+    font-size: 30px;
+}
+
+#promociones h3{
+    color: red;
+}
+
+#promociones .carta{
+    background-position: center center;
+    background-size: cover;
+    padding: 10px;
+    margin-top: 20px;
+    margin-right: 40px;
+    border-radius: 15px;
+    color: white;
+}
+
+/*cartas promos*/
+.carta:first-child{
+    background-image: url("/imagenes/promociones/ComboComplt.jpg");
+}
+
+.carta:nth-child(2){
+    background-image:
+    url("/imagenes/promociones/ComboHamb.jpg");
+}
+
+.carta:nth-child(3){
+    background-image:
+    url("/imagenes/promociones/ComboPizz.jpeg");
+}
+
+
+/*DELIVERY*/
+
+#delivery{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 70vh;
+    color: white;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ),
+    url("/imagenes/pagina/nube3.png");
+    background-repeat: none;
+    background-size: cover;
+    background-position: center center;
+}
+
+/*footer*/
+.pie-pagina .grupo1{
+    width: 90%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px;
+    padding: 35px 0px;
+}
+
+.pie-pagina .grupo1 .box figure img{
+    width: 350px;
+
+}
+
+.pie-pagina .grupo1 .box h2{
+    color: orange;
+    margin-bottom: 25px;
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+.pie-pagina .grupo1 .box p{
+    color: black;
+    margin-bottom: 10px;
+    padding-left: 15px;
+}
+
+.pie-pagina .grupo1 .box a{
+    color: black;
+    margin-bottom: 10px;
+    padding-left: 15px;
+}
+
+.pie-pagina .grupo1 .box .ayuda a{
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    text-decoration: none;
+}
+
+
+/*TEMPLATE PRODUCTOS*/
+#productos{
+    color: black;
+    text-align: center;
+}
+
+#productos .container{
+    padding: 20px 0px;
+}
+
+#productos p{
+    display: none;
+    color: black;
+}
+
+#productos h2{
+    margin-top: 0;
+    font-size: 30px;
+}
+
+#productos h3{
+    color: red;
+}
+
+#productos .carta-p{
+    background-position: center center;
+    background-size: cover;
+    padding: 10px;
+    padding-left: 10px;
+    margin-top: 20px;
+    margin-right: 40px;
+    border-radius: 15px;
+    color: white;
+}
+/*cartas p1*/
+.carta-p:first-child{
+    background-image:
+    url("/imagenes/productos/as.jpg");
+}
+
+.carta-p:nth-child(2){
+    background-image:
+    url("/imagenes/productos/carnemechada.jpg");
+}
+
+.carta-p:nth-child(3){
+    background-image: url("/imagenes/productos/chorillana.jpg");
+}
+
+/*productos2*/
+#productos2{
+    color: black;
+    text-align: center;
+}
+
+#productos2 .container{
+    padding: 20px 0px;
+}
+
+#productos2 p{
+    display: none;
+    color: black;
+}
+
+#productos2 h2{
+    margin-top: 0;
+}
+
+#productos2 h3{
+    color: red;
+}
+
+#productos2 .carta-p2{
+    background-position: center center;
+    background-size: cover;
+    padding: 10px;
+    margin-top: 20px;
+    margin-right: 40px;
+    border-radius: 15px;
+    color: white;
+}
+
+
+/*cartas p2*/
+.carta-p2:first-child{
+    background-image:
+    url("/imagenes/productos/churrasco.jpg");
+}
+
+.carta-p2:nth-child(2){
+    background-image:
+    url("/imagenes/productos/completo.jpg");
+}
+
+.carta-p2:nth-child(3){
+    background-image: url("/imagenes/productos/hamburguesa.jpg");
+}
+
+
+/*productos3*/
+#productos3{
+    color: black;
+    text-align: center;
+}
+
+#productos3 .container{
+    padding: 10px 0px;
+}
+
+#productos3 p{
+    display: none;
+    color: black;
+}
+
+#productos3 h2{
+    margin-top: 0;
+}
+
+#productos3 h3{
+    color: red;
+}
+
+#productos3 .carta-p3{
+    background-position: center center;
+    background-size: cover;
+    padding: 20px;
+    margin-top: 20px;
+    margin-right: 40px;
+    border-radius: 15px;
+    color: white;
+}
+
+/*cartas productos3*/
+.carta-p3:first-child{
+    background-image:
+    url("/imagenes/productos/papas.png");
+}
+
+.carta-p3:nth-child(2){
+    background-image:
+    url("/imagenes/productos/pizza.jpg");
+}
+
+.carta-p3:nth-child(3){
+    background-image: url("/imagenes/productos/polloasado.jpg");
+}
+
+/*TEMPLATE PROMOCIONES*/
+#promocionest1{
+    color: black;
+    text-align: center;
+}
+
+#promocionest1 .container{
+    padding: 20px 0px;
+}
+
+#promocionest1 p{
+    display: none;
+    color: black;
+}
+
+#promocionest1 h2{
+    margin-top: 0;
+    font-size: 30px;
+}
+
+#promocionest1 h3{
+    color: red;
+}
+
+#promocionest1 .cartapr{
+    background-position: center center;
+    background-size: cover;
+    padding: 10px;
+    margin-top: 20px;
+    margin-right: 40px;
+    border-radius: 15px;
+    color: white;
+}
+
+
+/*cartas pr*/
+.cartapr:first-child{
+    background-image:
+    url("/imagenes/promociones/ComboComplt.jpg");
+}
+
+.cartapr:nth-child(2){
+    background-image:
+    url("/imagenes/promociones/ComboHamb.jpg");
+}
+
+.cartapr:nth-child(3){
+    background-image: url("/imagenes/promociones/ComboPizz.jpeg");
+}
+
+/*promociones 2*/
+#promocionest2{
+    color: black;
+    text-align: center;
+}
+
+#promocionest2 .container{
+    padding: 20px 0px;
+}
+
+#promocionest2 p{
+    display: none;
+    color: black;
+}
+
+#promocionest2 h2{
+    margin-top: 0;
+
+}
+
+#promocionest2 h3{
+    color: red;
+}
+
+#promocionest2 .cartapr2{
+    background-position: center center;
+    background-size: cover;
+    padding: 10px;
+    margin-top: 20px;
+    margin-right: 40px;
+    border-radius: 15px;
+    color: white;
+}
+
+/*cartas pr2*/
+.cartapr2:first-child{
+    background-image:
+    url("/imagenes/promociones/promoas.jpg");
+}
+
+.cartapr2:nth-child(2){
+    background-image:
+    url("/imagenes/promociones/Promochurrasco.jpg");
+}
+
+.cartapr2:nth-child(3){
+    background-image: url("/imagenes/promociones/promopollo.jpeg");
+}
+
+
+/*TEMPLATE CONTACTO*/
+#info{
+    text-align: center;
+}
+
+
+/*PÁGINA WEB ESCRITORIO*/
+@media (min-width: 720px){
+
+    /*HEADER*/
+    header .container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+
+    /*PROMOS INDEX*/
+    #promociones .promos{
+        display: flex;
+        justify-content: center;
+    }
+
+    #promociones p{
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    #promociones h3{
+        margin-top: 20;
+    }
+
+
+    #promociones .carta{
+        padding: 50px;
+        background-size: 100% 200px;
+        background-repeat: no-repeat;
+        background-position-y: 0;
+        background-color: #fbb03c;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        color: white;
+    }
+
+    /*footer*/
+    .pie-pagina{
+        width: 100%;
+        background-color: white;
+    }
+
+    .pie-pagina .grupo1{
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 50px;
+        padding: 45px 0px;
+    }
+
+    .pie-pagina .grupo1 .box figure{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pie-pagina .grupo1 .box figure img{
+        width: 250px;
+    }
+
+    .pie-pagina .grupo1 .box h2{
+        color: orange;
+        margin-bottom: 25px;
+        font-size: 25px;
+    }
+
+    .pie-pagina .grupo1 .box p{
+        color: black;
+        margin-bottom: 10px;
+    }
+
+    .pie-pagina .grupo1 .box .ayuda a{
+        font-size: 20px;
+        margin-bottom: 10px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .pie-pagina .grupo1 .ayuda a:hover{
+        color: red;
+    }
+
+    .pie-pagina .grupo1 .cont a:hover{
+        color: red;
+    }
+
+    .pie-pagina .grupo1 .box .cont a{
+        font-size: 20px;
+        margin-bottom: 10px;
+        text-decoration: none;
+        color: black;
+    }
+
+    /*TEMPLATE PRODUCTOS*/
+    #productos .prod{
+        display: flex;
+        justify-content: center;
+    }
+
+    #productos p{
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    #productos h3{
+        margin-top: 20;
+    }
+
+    #productos .carta-p{
+        padding: 50px;
+        background-size: 100% 200px;
+        background-repeat: no-repeat;
+        background-position-y: 0;
+        background-color: #fbb03c;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        color: white;
+    }
+    /*productos2*/
+    #productos2 .prod{
+        display: flex;
+        justify-content: center;
+    }
+
+    #productos2 p{
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    #productos2 h3{
+        margin-top: 20;
+    }
+
+    #productos2 .carta-p2{
+        padding: 50px;
+        background-size: 100% 200px;
+        background-repeat: no-repeat;
+        background-position-y: 0;
+        background-color: #fbb03c;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        color: white;
+    }
+
+    /*productos3*/
+    #productos3 .prod{
+        display: flex;
+        justify-content: center;
+    }
+
+    #productos3 p{
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    #productos3 h3{
+        margin-top: 20;
+    }
+
+    #productos3 .carta-p3{
+        padding: 50px;
+        background-size: 100% 200px;
+        background-repeat: no-repeat;
+        background-position-y: 0;
+        background-color: #fbb03c;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        color: white;
+    }
+
+
+    /*TEMPLATE PROMOS*/
+
+    /*promos1*/
+    #promocionest1 .promos{
+        display: flex;
+        justify-content: center;
+    }
+
+    #promocionest1 p{
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    #promocionest1 h3{
+        margin-top: 20;
+    }
+
+    #promocionest1 .cartapr{
+        padding: 50px;
+        background-size: 100% 200px;
+        background-repeat: no-repeat;
+        background-position-y: 0;
+        background-color: #fbb03c;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        color: white;
+    }
+
+    /*promociones2*/
+    #promocionest2 .promos{
+        display: flex;
+        justify-content: center;
+    }
+
+    #promocionest2 p{
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    #promocionest2 h3{
+        margin-top: 20;
+    }
+
+    #promocionest2 .cartapr2{
+        padding: 50px;
+        background-size: 100% 200px;
+        background-repeat: no-repeat;
+        background-position-y: 0;
+        background-color: #fbb03c;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        color: white;
+    }
+
+/*TEMPLATE CONTACTO*/
+    #info{
+        text-align: center;
+        background-image: url();
+    }
+
+
+/*TEMPLATE REGISTRO*/
+
+.form-register{
+    width: 400px;
+    background: #fbb03c;
+    padding: 30px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 4px;
+    color: black;
+
+}
+
+.controls{
+    width: 95%;
+    background-color: #ffff;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid;
+    font-size: 15px;
+}
+
+.form-register p{
+    height: 40px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.form-register a{
+    color: black;
+    text-decoration: none;
+}
+
+.form-register a:hover{
+    color: black;
+    text-decoration: underline;
+}
+
+.form-register button{
+    width: 100%;
+    border: none;
+    padding: 10px;
+    color: black;
+    font-size: 15px;
+}
+
+/* TEMPLATE INICIAR SESIÓN*/
+
+.form-login{
+    width: 400px;
+    background: #fbb03c;
+    padding: 30px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 4px;
+    color: black;
+}
+
+.controls{
+    width: 95%;
+    background-color: #ffff;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid;
+    font-size: 15px;
+}
+
+.form-login p{
+    height: 40px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.form-login a{
+    color: black;
+    text-decoration: none;
+}
+
+.form-login a:hover{
+    color: black;
+    text-decoration: underline;
+}
+
+.form-login button{
+    width: 100%;
+    border: none;
+    padding: 10px;
+    color: black;
+    font-size: 15px;
+}

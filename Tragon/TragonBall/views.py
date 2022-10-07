@@ -21,20 +21,20 @@ def registroCliente(request):
     else:
         return render(request, 'registrarse.html')
 
-def login(request):
+def paginaLogin(request):
     if request.method=='POST':
         try:
-            detalleCliente= Cliente.objects.get(correo=request.POST['correo'], pwd=request.POST['password'])
-            print("Cliente=", detalleCliente)
-            request.session['correo']=detalleCliente.correo
+            detalleC=Cliente.objects.get(correo_cliente=request.POST['correo'], clave_cliente=request.POST['password'])
+            print("Cliente=", detalleC)
+            request.session['Email']=detalleC.correo_cliente
             return render(request, 'index.html')
         except Cliente.DoesNotExist as e:
-            messages.success(request, 'correo o contraseña incorrecta.')
-    return render(request, 'login.html')
+            messages.success(request, 'Nombre de usuario o password no es correcto..!')
+    return render(request, 'iniciarsesion.html')
 
 def cerrarSesion(request):
     try:
-        del request.session['correo']
+        del request.session['Email']
     except:
         return render(request, 'index.html')
     return render(request, 'index.html')
