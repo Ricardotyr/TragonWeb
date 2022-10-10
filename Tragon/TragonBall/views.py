@@ -4,9 +4,10 @@ from django.contrib import messages
 
 # Create your views here.
 
-def paginaIndex(request):
-    return render(request, 'index.html')
+def inicio(request):
+    return render(request, 'inicio.html')
 
+    
 def registroCliente(request):
     if request.method=='POST':
         nombre=request.POST['nombre']
@@ -38,3 +39,5 @@ def cerrarSesion(request):
     except:
         return render(request, 'index.html')
     return render(request, 'index.html')
+
+

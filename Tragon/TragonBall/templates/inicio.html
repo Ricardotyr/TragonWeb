@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- LINK CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/estilo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../static/js/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'inicio' %}"><img src="../static/img/brand1.png" alt="Tragón Ball Z" width="200" height="70"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Categorías
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Productos</a></li>
+                  <li><a class="dropdown-item" href="#">Promociones</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Delivery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Contáctanos</a>
+              </li>
+            </ul>
+            <!-- Buscador -->
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+            <!-- Icons -->
+            <div class="cont-icon">
+                <a href="{% url 'paginaLogin' %}" class="bi bi-person-circle"></a>
+                <a href="" class="bi bi-cart-fill"></a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Carrusel -->
+      <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="../static/img/gok.png" class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Presentamos nuestros productos estrellas</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../static/img/churrasco.jpg" class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Prueba nuestro churrasco para que recargues tu ki</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="../static/img/ComboComplt.jpg" class="d-block w-100" alt="">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Prueba nuestra promoción para que te conviertas en un saiyajin</h5>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!-- Tarjetas Promociones -->
+      <div class="title text-center py-5" style="margin-top: 0;">
+        <h1>Promociones</h1>
+      </div>
+      <br>
+      <div class="container">
+        <div class="row mx-5">
+            <div class="col ml-5">
+                <div class="card" style="width: 23rem; background-color: orange;">
+                    <img src="../static/img/ComboHamb.jpg" class="card-img-top" alt="..." style="width: 100%; height: 300px;">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary" style="background-color: yellow; color: black; font-weight: bold;">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col ml-5">
+                <div class="card" style="width: 23rem; background-color: orange;">
+                    <img src="../static/img/ComboPizz.jpeg" class="card-img-top" alt="..." style="width: 100%; height: 300px;">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary" style="background-color: yellow; color: black; font-weight: bold;">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col ml-5">
+                <div class="card" style="width: 23rem; background-color: orange;">
+                    <img src="../static/img/promopollo.jpeg" class="card-img-top" alt="..." style="width: 100%; height: 300px;">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary" style="background-color: yellow; color: black; font-weight: bold;">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <hr>
+      <!-- Tarjetas Productos -->
+      <div class="title text-center py-5">
+        <h1>Productos</h1> 
+      </div>
+      <br>
+      <div class="container">
+        <div class="row mx-5">
+            <div class="col ml-5">
+                <div class="card" style="width: 23rem; background-color: orange;">
+                    <img src="../static/img/as.jpg" class="card-img-top" alt="..." style="width: 100%; height: 300px;">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary" style="background-color: yellow; color: black; font-weight: bold;">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col ml-5">
+                <div class="card" style="width: 23rem; background-color: orange;">
+                    <img src="../static/img/chorillana.jpg" class="card-img-top" alt="..." style="width: 100%; height: 300px;">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary" style="background-color: yellow; color: black; font-weight: bold;">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col ml-5">
+                <div class="card" style="width: 23rem; background-color: orange;">
+                    <img src="../static/img/papas.png" class="card-img-top" alt="..." style="width: 100%; height: 300px;">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="btn btn-primary" style="background-color: yellow; color: black; font-weight: bold;">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <hr>
+      <br>
+      <!--Delivery-->
+      <section id="delivery">
+        <form action="delivery.html">
+        <h1>Revisa si hay delivery en tu zona</h1>
+        <button>Ver zonas</button>
+        </form>
+      </section>
+      <hr>
+      
+      <!----Footer-->
+      <footer class="pie-pagina">
+        <div class="grupo1">
+            <div class="box">
+                <figure>
+                    <a href="">
+                        <img src="../static/img/esfera.png" alt="esfera">
+                    </a>
+                </figure>
+            </div>
+
+            <div class="box">
+                <h2>Contacto</h2>
+                <div class="cont"></div>
+                <p>Correo electrónico:</p>
+                <a href="mailto:tragonballzpyme@gmail.com">tragonballzpyme@gmail.com</a>
+                <p>Número de teléfono:</p>
+                <a href= "tel:+56987654321">+569 8765 4321</a>
+                <p>Ponte en comunicación con nosotros!</p>
+            </div>
+
+            <div class="box">
+                <h2>Ayuda pedidos</h2>
+                <div class="ayuda">
+                    <a href="delivery.html">Localizador de comunas</a>
+                    <p></p>
+                    <a href="">Carro de compras</a>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2"></div>
+            <small>&copy; 2021 <b>Tragón Ball Z</b> - Todos los derechos reservados.</small>
+      </footer>
+</body>
+</html>
