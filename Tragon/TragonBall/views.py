@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from TragonBall.models import Cliente
 from django.contrib import messages
+
+
 
 # Create your views here.
 
@@ -28,7 +30,7 @@ def paginaLogin(request):
             detalleC=Cliente.objects.get(correo_cliente=request.POST['correo'], clave_cliente=request.POST['password'])
             print("Cliente=", detalleC)
             request.session['Email']=detalleC.correo_cliente
-            return render(request, 'index.html')
+            return render(request, 'inicio.html')
         except Cliente.DoesNotExist as e:
             messages.success(request, 'Nombre de usuario o password no es correcto..!')
     return render(request, 'iniciarsesion.html')
@@ -39,5 +41,6 @@ def cerrarSesion(request):
     except:
         return render(request, 'index.html')
     return render(request, 'index.html')
+
 
 

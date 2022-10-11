@@ -43,6 +43,19 @@
               <li class="nav-item">
                 <a class="nav-link active" href="#">Contáctanos</a>
               </li>
+              {% if user.is_authenticated %}
+              <li>
+                <a href="{% url 'logout' %}">cerrar sesión</a>
+              </li>
+              <li>
+                <a href="#">@{{user.username}}</a>
+              </li>
+              {% else %}
+              <li>
+                <a href="{% url 'login' %}">iniciar sesión</a>
+              </li>
+
+              {% endif %}
             </ul>
             <!-- Buscador -->
             <form class="d-flex">
@@ -53,6 +66,10 @@
             <div class="cont-icon">
                 <a href="{% url 'paginaLogin' %}" class="bi bi-person-circle"></a>
                 <a href="" class="bi bi-cart-fill"></a>
+                {% if request.session.Email %}
+                {{request.session.Email}} &nbsp; &nbsp; <a href="{% url 'paginaLogin' %}">cerrar sesión</a>
+                {% else %}
+                {% endif %}
             </div>
           </div>
         </div>
