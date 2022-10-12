@@ -1,6 +1,9 @@
+from email.message import EmailMessage
 from django.shortcuts import render, redirect
 from TragonBall.models import Cliente
 from django.contrib import messages
+from .forms import FormularioContacto
+from django.core.mail import EmailMessage
 
 
 
@@ -39,8 +42,28 @@ def cerrarSesion(request):
     try:
         del request.session['Email']
     except:
-        return render(request, 'index.html')
-    return render(request, 'index.html')
+        return render(request, 'inicio.html')
+    return render(request, 'inicio.html')
 
 
+# Contacto #
+def contacto(request):
+    formulario_contacto=FormularioContacto()
 
+    if request.method=="POST":
+        formulario_contacto=FormularioContacto(data=request.POST)
+        if formulario_contacto.is_valid():
+            nombre=request.POST.get("nombre")
+            email=request.POST.get("email")
+            contenido=request.POST.get("contenido")
+
+            email=EmailMessage("Mensaje desde Tragón Ball Z",
+            "El usuario con nombre {} con email {} envia lo siguiente:\n\n {}".format(nombre,email,contenido),
+            "",["tragonballzpyme@gmail.com"],reply_to=[email])
+
+            try:
+                email.send()
+                return redirect("/contacto/?valido")
+            except:
+                return redirect("/contacto/?novalido")
+    return render(request, "contacto.html", {"miFormulario":formulario_contacto})
