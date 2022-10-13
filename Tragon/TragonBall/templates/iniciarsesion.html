@@ -49,7 +49,7 @@
                 </ul>
                 <!-- Buscador -->
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <i class="bi bi-search" style="margin-right: 10px; margin-top: 5px;"></i><input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" required>
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
                 <!-- Icons -->
@@ -78,7 +78,8 @@
                                         </div>
                                         <div class="col-md-6 col-xl-4 text-center">
                                             
-                                            <h2 class="fw-bold-md-4 pb-2">Bienvenido!</h2>
+                                            <img src="../static/img/Bienvenido.png" alt="">
+                                            <p></p>
                                             {% csrf_token %}
                                             <div class="form-outline mb-3">
                                                 <label for="correo" class="form-label">Correo electrónico</label>
@@ -86,7 +87,7 @@
                                             </div>
 
                                             <div class="form-outline mb-4">
-                                                <label for="password" class="form-label">Correo electrónico</label>
+                                                <label for="password" class="form-label">Contraseña</label>
                                                 <input type="password" id="password" placeholder="Ingrese su contraseña" name="password"  class="form-control form-control-lg" maxlength="16" required>
                                             </div>
 
@@ -146,6 +147,8 @@
                 <a href="delivery.html">Localizador de comunas</a>
                 <p></p>
                 <a href="">Carro de compras</a>
+                <p></p>
+                <a href="{% url 'tiposPago' %}">Tipos de pago</a>
                 <p></p>
             </div>
         </div>

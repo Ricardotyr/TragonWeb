@@ -46,8 +46,8 @@
                 </ul>
                 <!-- Buscador -->
                 <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    <input class="form-control me-2" type="search" placeholder="" aria-label="Search" required>
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
                 <!-- Icons -->
                 <div class="cont-icon">
@@ -63,27 +63,30 @@
     </nav>
     <hr>    
     <section class="form-contacto d-flex justify-content-center">
-        <div class="card col-sm-6 p-3">
+        <div class="card col-sm-6 p-3 text-center">
             <div class="mb-3">
-                <h2>Contacto</h2>
+                
+                <img src="../static/img/Contacto.png" alt="">
+                <p></p>
+                <h4 class="text-center">Escribenos un mensaje a nuestro correo electrónico.</h4>
             </div>
             {% if "valido" in request.GET %}
-            <div class="alert alert-success" role="alert">
-                <p style="color: black;">Información enviada correctamente, gracias</p>
+            <div class="alert alert-success mt-2" role="alert">
+                <p style="color: black;">Información enviada correctamente.</p>
             </div>
             {% endif %}
             <div class="mb-2 ">
-                <form action="" method="POST" class="text-align-center">
+                <form action="" method="POST" class="">
                     {% csrf_token %}
                     <div class="mb-2">
 
                         <div class="form-outline mb-3">
-                            <table for="correo">{{miFormulario.as_table}}</table>
-                            <input type="submit" value="Enviar" style="width: 125px;">
+                            <div class=" mt-2 w-100" for="correo">{{miFormulario.as_p}}</div>
+                            <input type="submit" value="Enviar" style="width: 50%;">
                             &nbsp;&nbsp;
                             {% if messages %}
                             {% for msg in messages %}
-                            <div class="alert alert-success" role="alert">
+                            <div class="alert alert-success mt-2" role="alert">
                             <b>{{msg}}</b>
                             </div>
                             {% endfor %}
@@ -123,6 +126,7 @@
                     <p></p>
                     <a href="">Carro de compras</a>
                     <p></p>
+                    <a href="{% url 'tiposPago' %}">Tipos de pago</a>
                 </div>
             </div>
         </div>

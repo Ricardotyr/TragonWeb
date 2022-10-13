@@ -1,0 +1,168 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tragón Ball Z</title>
+    <link rel="icon" href="../static/img/esfera.ico">
+    <!-- LINK CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/estilo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../static/js/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <div class="container-fluid ">
+          <a class="navbar-brand" href="{% url 'inicio' %}"><img src="../static/img/brand1.png" alt="Tragón Ball Z" width="200" height="70"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Categorías
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Productos</a></li>
+                  <li><a class="dropdown-item" href="#">Promociones</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Delivery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'nosotros' %}">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'contacto' %}">Contáctanos</a>
+              </li>
+            </ul>
+
+            <h5 style="margin-right: 20px">
+                {% if request.session.Email %}
+                {{request.session.Email}} &nbsp; &nbsp; <a class="text-decoration-none" href="{% url 'cerrarSesion' %}">Cerrar sesión</a>
+                {% else %}
+                {% endif %}
+            </h5> 
+
+            <!-- Buscador -->
+            <form class="d-flex">
+              <i class="bi bi-search" style="margin-right: 10px; margin-top: 5px;"></i><input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" required>
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+            <!-- Icons -->
+            <div class="cont-icon">
+              <a href="{% url 'paginaLogin' %}" class="bi bi-person-circle"></a>
+              <a href="" class="bi bi-cart-fill"></a> 
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+    
+
+    <section class="tipos-pago" style="background-image: url('../static/img/kamehouse.jpg');" >
+        <img src="../static/img/TiposPago.png" alt="" style="margin-left: 750px; margin-top: 20px;">
+        <p></p>
+        <div class="card mb-3 shadow-lg p-3 mb-5 bg-white rounded col-sm-6 p-3" style="max-width: 540px; margin-left: 700px; margin-top: 20px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../static/img/efectivo.png" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Efectivo</h5>
+                  <p class="card-text text-danger">Presencial</p>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="card mb-3 shadow-lg p-3 mb-5 bg-white rounded" style="max-width: 540px; margin-left: 700px; margin-top: 20px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../static/img/OnePay-pago.jpg" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">OnePay</h5>
+                  <p class="card-text text-danger">On-line</p>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="card mb-3 shadow-lg p-3 mb-5 bg-white rounded" style="max-width: 540px; margin-left: 700px; margin-top: 20px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+       
+        
+    
+    
+
+      
+    <hr>
+    </section> 
+    <!----Footer-->
+    <footer class="pie-pagina">
+        <div class="grupo1">
+            <div class="box">
+                <figure>
+                    <a href="">
+                        <img src="../static/img/esfera.png" alt="esfera">
+                    </a>
+                </figure>
+            </div>
+
+            <div class="box">
+                <h2>Contacto</h2>
+                <div class="cont"></div>
+                <p>Correo electrónico:</p>
+                <a href="mailto:tragonballzpyme@gmail.com">tragonballzpyme@gmail.com</a>
+                <p>Número de teléfono:</p>
+                <a href= "tel:+56987654321">+569 8765 4321</a>
+                <p>Ponte en comunicación con nosotros!</p>
+            </div>
+
+            <div class="box">
+                <h2>Ayuda pedidos</h2>
+                <div class="ayuda">
+                    <a  href="delivery.html">Localizador de comunas</a>
+                    <p></p>
+                    <a  href="#">Carro de compras</a>
+                    <p></p>
+                    <a  href="#">Tipos de pago</a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2"></div>
+            <small>&copy; 2021 <b>Tragón Ball Z</b> - Todos los derechos reservados.</small>
+      </footer>
+</body>
+</html>
+        

@@ -46,7 +46,7 @@
                 </ul>
                 <!-- Buscador -->
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <i class="bi bi-search" style="margin-right: 10px; margin-top: 5px;"></i><input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
                 <!-- Icons -->
@@ -79,7 +79,8 @@
                                         </div>
                                         <div class="col-md-6 col-xl-4 text-center">
                                             
-                                            <h2 class="fw-bold-md-4 pb-2">Regístrate!</h2>
+                                            <img src="../static/img/Registrate.png" alt="">
+                                            <p></p>
                                             {% csrf_token %}
                                             <div class="form-outline mb-3">
                                                 <label for="nombre" class="form-label">Nombre</label>
@@ -172,6 +173,7 @@
                 <p></p>
                 <a href="">Carro de compras</a>
                 <p></p>
+                <a href="{% url 'tiposPago' %}">Tipos de pago</a>
             </div>
         </div>
     </div>

@@ -45,19 +45,23 @@
                 <a class="nav-link active" href="{% url 'contacto' %}">Contáctanos</a>
               </li>
             </ul>
+
+            <h5 style="margin-right: 20px">
+              {% if request.session.Email %}
+                {{request.session.Email}} &nbsp; &nbsp; <a class="text-decoration-none" href="{% url 'cerrarSesion' %}">Cerrar sesión</a>
+                {% else %}
+                {% endif %}
+            </h5> 
+
             <!-- Buscador -->
             <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <i class="bi bi-search" style="margin-right: 10px; margin-top: 5px;"></i><input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" required>
               <button class="btn btn-outline-success" type="submit">Buscar</button>
             </form>
             <!-- Icons -->
             <div class="cont-icon">
               <a href="{% url 'paginaLogin' %}" class="bi bi-person-circle"></a>
-              <a href="" class="bi bi-cart-fill"></a>
-                {% if request.session.Email %}
-                {{request.session.Email}} &nbsp; &nbsp; <a href="{% url 'cerrarSesion' %}">cerrar sesión</a>
-                {% else %}
-                {% endif %}
+              <a href="" class="bi bi-cart-fill"></a> 
             </div>
           </div>
         </div>
@@ -102,7 +106,7 @@
       <hr>
       <!-- Tarjetas Promociones -->
       <div class="title text-center py-2">
-        <h1>Promociones</h1>
+        <img src="../static/img/Promos.png" alt="">
       </div>
       <br>
       <div class="container mt-0 shadow-lg p-4 mb-5 bg-white rounded">
@@ -114,7 +118,7 @@
                       <h5 class="card-title">Card title</h5>
                       <h6 class="card-subtitle mb-2 text-danger">Subtítulo de la tarjeta</h6>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary" style="background-color: yellow; color: black; font-weight: bold;">Go somewhere</a>
+                      <a href="#" class="btn btn-primary" style="background-color: yellow; color: black; font-weight: bold;">Agregar al carro</a>
                     </div>
                 </div>
             </div>
@@ -126,7 +130,7 @@
                       <h5 class="card-title">Card title</h5>
                       <h6 class="card-subtitle mb-2 text-danger">Subtítulo de la tarjeta</h6>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary" style="background-color: yellow; color: black; font-weight: bold;">Go somewhere</a>
+                      <a href="#" class="btn btn-primary" style="background-color: yellow; color: black; font-weight: bold;">Agregar al carro</a>
                     </div>
                 </div>
             </div>
@@ -138,7 +142,7 @@
                       <h5 class="card-title">Card title</h5>
                       <h6 class="card-subtitle mb-2 text-danger">Subtítulo de la tarjeta</h6>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary" style="background-color: yellow; color: black; font-weight: bold;">Go somewhere</a>
+                      <a href="#" class="btn btn-primary" style="background-color: yellow; color: black; font-weight: bold;">Agregar al carro</a>
                     </div>
                 </div>
             </div>
@@ -149,7 +153,7 @@
       <hr>
       <!-- Tarjetas Productos -->
       <div class="title text-center py-2">
-        <h1>Productos</h1> 
+        <img src="../static/img/Productos.png" alt="">
       </div>
       <br>
       <div class="container shadow-lg p-3 mb-5 bg-white rounded">
@@ -161,7 +165,7 @@
                       <h5 class="card-title">Card title</h5>
                       <h6 class="card-subtitle mb-2 text-danger">Subtítulo de la tarjeta</h6>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-white shadow" style="background-color: yellow; color: black; font-weight: bold;">Go somewhere</a>
+                      <a href="#" class="btn btn-white shadow" style="background-color: yellow; color: black; font-weight: bold;">Agregar al carro</a>
                     </div>
                 </div>
             </div>
@@ -173,7 +177,7 @@
                       <h5 class="card-title">Card title</h5>
                       <h6 class="card-subtitle mb-2 text-danger">Subtítulo de la tarjeta</h6>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary" style="background-color: yellow; color: black; font-weight: bold;">Go somewhere</a>
+                      <a href="#" class="btn btn-primary" style="background-color: yellow; color: black; font-weight: bold;">Agregar al carro</a>
                     </div>
                 </div>
             </div>
@@ -185,20 +189,20 @@
                       <h5 class="card-title">Card title</h5>
                       <h6 class="card-subtitle mb-2 text-danger">Subtítulo de la tarjeta</h6>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary shadow" style="background-color: yellow; color: black; font-weight: bold;">Go somewhere</a>
+                      <a href="#" class="btn btn-primary shadow" style="background-color: yellow; color: black; font-weight: bold;">Agregar al carro</a>
                     </div>
                 </div>
             </div>
         </div>
       </div>
       <a href="#" class="btn btn-primary" style="background-color: yellow; color: black; font-weight: bold; margin-left: 860px;">Ver todos los productos</a>
-      <hr>
+      <p></p>
       <br>
       <!--Delivery-->
       <section id="delivery" >
         <form action="delivery.html">
         <h1>Revisa si hay delivery en tu zona</h1>
-        <button>Ver zonas</button>
+        <a href="#" class="btn btn-primary" style="background-color: yellow; color: black; font-weight: bold;">Ver zonas</a>
         </form>
       </section>
       <hr>
@@ -227,10 +231,11 @@
             <div class="box">
                 <h2>Ayuda pedidos</h2>
                 <div class="ayuda">
-                    <a href="delivery.html">Localizador de comunas</a>
+                    <a  href="delivery.html">Localizador de comunas</a>
                     <p></p>
-                    <a href="">Carro de compras</a>
+                    <a  href="#">Carro de compras</a>
                     <p></p>
+                    <a  href="{% url 'tiposPago' %}">Tipos de pago</a>
                 </div>
             </div>
         </div>

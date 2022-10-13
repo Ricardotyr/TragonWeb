@@ -78,3 +78,6 @@ def contacto(request):
                 return redirect("contacto")
     return render(request, "contacto.html", {"miFormulario":formulario})
 
+#Tipos de pago
+def tiposPago(request):
+    return render(request, 'tiposPago.html')
