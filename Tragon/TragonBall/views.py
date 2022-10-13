@@ -15,7 +15,7 @@ def inicio(request):
 def inicio2(request):
     return render(request, "inicio2.html")
 
-    
+
 def registroCliente(request):
     if request.method=='POST':
         nombre=request.POST['nombre']
@@ -50,6 +50,11 @@ def cerrarSesion(request):
     return render(request, 'inicio.html')
 
 
+#Nosotros
+def nosotros(request):
+    return render(request, 'nosotros.html')
+
+
 # Contacto
 def contacto(request):
     formulario=FormularioContacto()
@@ -72,3 +77,4 @@ def contacto(request):
             except:    
                 return redirect("contacto")
     return render(request, "contacto.html", {"miFormulario":formulario})
+

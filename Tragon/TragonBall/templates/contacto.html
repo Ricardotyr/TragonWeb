@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tragón Ball Z | Contacto</title>
+    <link rel="icon" href="../static/img/esfera.ico">
     <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/css/estilo.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -71,14 +72,23 @@
                 <p style="color: black;">Información enviada correctamente, gracias</p>
             </div>
             {% endif %}
-            <div class="mb-2">
+            <div class="mb-2 ">
                 <form action="" method="POST" class="text-align-center">
                     {% csrf_token %}
                     <div class="mb-2">
 
                         <div class="form-outline mb-3">
                             <table for="correo">{{miFormulario.as_table}}</table>
-                        </div>
+                            <input type="submit" value="Enviar" style="width: 125px;">
+                            &nbsp;&nbsp;
+                            {% if messages %}
+                            {% for msg in messages %}
+                            <div class="alert alert-success" role="alert">
+                            <b>{{msg}}</b>
+                            </div>
+                            {% endfor %}
+                            {% endif %}     
+                        </div>   
                     </div>
                 </form>
             </div>
