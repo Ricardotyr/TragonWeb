@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Tragón Ball Z | Registro</title>
     <!---LINK CSS-->
     <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/css/estilo.css">
@@ -11,7 +11,7 @@
     <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../static/js/jquery-3.6.1.min.js"></script>
 </head>
-<body>
+<body >
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -60,41 +60,89 @@
             </div>
         </div>
     </nav>
-    <hr>
-    <section class="form-register">
+
+    
+    <section class="form-register" style=" background-image: url(../static/img/3742148.jpg); background-repeat: no-repeat;">
         <form method="post">
-            <div class="container">
-                <h1>Regístrate</h1>
-                {% csrf_token %}
-                <br>
-                <input class="controls" type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre" maxlength="30" required>
-                <br>
-                <input class="controls" type="text" name="apellido" id="apellido" placeholder="Ingrese su apellido" maxlength="30" required>
-                <br>
-                <input class="controls" type="text" name="correo" id="correo" placeholder="Ingrese su correo electrónico" required>
-                <br>
-                <input class="controls" type="password" name="password" id="password" placeholder="Ingrese su contraseña" maxlength="16" required>
-                <br>
-                <input class="controls" type="text" name="telefono" id="telefono" placeholder="Ingrese su teléfono" maxlength="9" required>
-                <br>
-                <input class="controls" type="date" name="fecha" id="fecha" placeholder="Ingrese su fecha de nacimiento" required>
-                <p>Estoy de acuerdo con los <a href="">Terminos y condiciones</a></p>
-                <button type="submit">Registrarte</button>
-                &nbsp;&nbsp;
-                {% if messages %}
-                {% for msg in messages %}
-                <div class="alert alert-success" role="alert">
-                    <b>{{msg}}</b>
+            <div class="mas d-flex align-items-center h-100 ">
+                <div class="container mt-5 mb-5">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-xl-10">
+                            <div class="card">
+                                <div class="card-body p-5">
+                                    <div class="row d-flex align-items-center">
+                                        <div class="col-md-6 col-xl-7"> 
+                                            <div class="text-center pt-md-3 pb-5 my-md-1">
+                                                <img src="../static/img/seeds-son-goku.jpg" style="height: 500px; width: 500px;" alt="">
+                                            </div>                                                
+                                        </div>
+                                        <div class="col-md-6 col-xl-4 text-center">
+                                            
+                                            <h2 class="fw-bold-md-4 pb-2">Regístrate!</h2>
+                                            {% csrf_token %}
+                                            <div class="form-outline mb-3">
+                                                <label for="nombre" class="form-label">Nombre</label>
+                                                <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre" class="form.control form-control-lg" maxlength="30" required>                                               
+                                            </div>
+
+                                            <div class="form-outline mb-3">
+                                                <label for="apellido" class="form-label">Apellido</label>
+                                                <input type="text" id="apellido" placeholder="Ingrese su apellido" name="apellido"  class="form-control form-control-lg" maxlength="30" required>
+                                            </div>
+
+                                            <div class="form-outline mb-3">
+                                                <label for="correo" class="form-label">Correo electrónico</label>
+                                                <input type="text" id="correo" placeholder="Ingrese su email" name="correo"  class="form-control form-control-lg" required>
+                                            </div>
+
+                                            <div class="form-outline mb-3">
+                                                <label for="password" class="form-label">Contraseña</label>
+                                                <input type="password" id="password" placeholder="Ingrese contraseña deseada" name="password"  class="form-control form-control-lg" maxlength="16" required>
+                                            </div>
+
+                                            <div class="form-outline mb-3">
+                                                <label for="telefono" class="form-label">Celular</label>
+                                                <input type="text" id="telefono" placeholder="Ingrese número de teléfono" name="telefono"  class="form-control form-control-lg" maxlength="9" required>
+                                            </div>
+
+                                            <div class="form-outline mb-3">
+                                                <label for="fecha" class="form-label">Fecha nacimiento</label>
+                                                <input type="date" id="fecha" placeholder="Ingrese contraseña deseada" name="fecha"  class="form-control form-control-lg" required>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked required>
+                                                <label class="form-check-label" for="flexCheckChecked">
+                                                  Acepto los términos y condiciones
+                                                </label>
+                                              </div>
+
+                                            <div class="text-center">
+                                                <button class="btn btn-info btn.block btn-lg mt-2 w-100 p-2" type="submit">Registrarse</button>
+                                                <br>
+                                                <br>
+                                                &nbsp;&nbsp;
+                                                {% if messages %}
+                                                {% for msg in messages %}
+                                                <div class="alert alert-success" role="alert">
+                                                    <b>{{msg}}</b>
+                                                </div>                   
+                                                {% endfor %}
+                                                {% endif %}                                               
+                                                <p class="d-inline-block">¿Ya tienes cuenta?</p> <a href="{% url 'paginaLogin' %}" class="link-info">Inicia Sesión<i class="fas fa-long-arrow-alt-right"></i></a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                {% endfor %}
-                {% endif %}
-                <br>
-                <em>Si ya estas registrado <a href="{% url 'paginaLogin' %}">Ingresa</a></em>
             </div>
         </form>
         <hr>
     </section>
-    <hr>
 
 <footer class="pie-pagina">
     <div class="grupo1">

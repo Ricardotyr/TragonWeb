@@ -82,6 +82,12 @@
     color: black;
 }
 
+.form.cont{
+    width: 340px;
+    height: 440px;
+    border-radius: 8px;
+    box-shadow: 0 0 40px -10px;
+}
 
 @media (min-width: 720px){
 

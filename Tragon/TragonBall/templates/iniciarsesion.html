@@ -59,44 +59,54 @@
           </div>
         </div>
     </nav>
-    <hr>
-    <!--<section class="intro">
-        <div class="mask d-flex align-items-center h-100 gradient-custom">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-xl-10">
-                        <div class="card">
-                            <div class="card-body p-5">
-                                <div class="row d-flex align-items-center">
-                                    <div class="col-md-6 col-xl-7">
-                                        <div class="text-center pt-md-5 pb-5 my-md-5" style="padding-right: 24px ;">
-                                            <i class="fas fa-laptop" style="color: #d6d6d6;"></i>
-                                        </div>
-                                    </div>
 
-                                    <div class="col-md-6 col-xl-4 text-center">
-                                        <h2 class="fw-bold-md-4 pb-2">Iniciar Sesión</h2>
-                                        {% csrf_token %}
-                                        <div class="form-outline mb-3">
-                                            <input type="email" id="typeEmail" class="form-control form-control-lg">
-                                            <label for="typeEmail" class="form-label">Email</label>
-                                        </div>
 
-                                        <div class="form-outline mb-4">
-                                            <input type="password" id="typePassword" class="form-control form-control-lg">
-                                            <label for="typePassword" class="form-label">Password</label>
+    <section class="form-login" style=" background-image: url(../static/img/3742148.jpg); background-repeat: repeat;" >
+        <form method="post">
+            <div class="mas d-flex align-items-center h-100">
+                <div class="container mt-5 mb-5">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-xl-10">
+                            <div class="card">
+                                <div class="card-body p-5">
+                                    <div class="row d-flex align-items-center">
+                                        <div class="col-md-6 col-xl-7"> 
+                                            <div class="text-center pt-md-2 pb-4 my-md-1">
+                                                <img src="../static/img/Dragon-Ball-Goku-PNG-Photo.png" style="height: 500px; width: 500px;" alt="">
+                                            </div>                                                
                                         </div>
+                                        <div class="col-md-6 col-xl-4 text-center">
+                                            
+                                            <h2 class="fw-bold-md-4 pb-2">Bienvenido!</h2>
+                                            {% csrf_token %}
+                                            <div class="form-outline mb-3">
+                                                <label for="correo" class="form-label">Correo electrónico</label>
+                                                <input type="text" name="correo" id="correo" placeholder="Ingrese su email" class="form.control form-control-lg" required>                                               
+                                            </div>
 
-                                        <div class="text-center">
-                                            <button class="btn btn-info btn-block btn-lg" type="submit">Ingresar</button>
-                                            &nbsp;&nbsp;
-                                            {% if messages %}
+                                            <div class="form-outline mb-4">
+                                                <label for="password" class="form-label">Correo electrónico</label>
+                                                <input type="password" id="password" placeholder="Ingrese su contraseña" name="password"  class="form-control form-control-lg" maxlength="16" required>
+                                            </div>
+
+                                            <div class="text-center">
+                                                <button class="btn btn-info btn.block btn-lg mt-1 w-100 p-2" type="submit">Iniciar Sesión</button>
+                                                <br>
+                                                <br>
+                                                &nbsp;&nbsp;
+                                                {% if messages %}
                                                 {% for msg in messages %}
-                                                <b>{{msg}}</b>
+                                                <div class="alert alert-danger" role="alert">
+                                                    <b>{{msg}}</b>
+                                                </div>                   
                                                 {% endfor %}
                                                 {% endif %}
-                                            <p class="small mt-3 mb-4 text-muted">Olvidaste tu<span class="fw-bold"><a href="#!" class="text-muted">Contraseña</a></span></p>
-                                            <a href="#!" class="link-info">Registrarse <i class="fas fa-long-arrow-alt-right"></i></a>
+                                                <a href="#" class="small mt-3 mb-4 text-muted p-2 mt-3">¿Has olvidado tu contraseña?</a>
+                                                <br>
+                                                <br>
+                                                <p class="d-inline-block">¿Aun no tienes cuenta?</p> <a href="{% url 'reg' %}" class="link-info">Regístrate <i class="fas fa-long-arrow-alt-right"></i></a>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -105,32 +115,10 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>-->
-    <section class="form-login">
-        <form method="post">
-            <div class="container">
-                <h1>Login</h1>
-                {% csrf_token %}
-                <br>
-                <input class="controls" type="text" name="correo" id="correo" placeholder="Ingrese su correo electrónico" required>
-                <br>
-                <input class="controls" type="password" name="password" id="password" placeholder="Ingrese su contraseña" maxlength="16" required>
-                <br>
-                <button type="submit">Iniciar Sesión</button>
-                &nbsp;&nbsp;
-                {% if messages %}
-                    {% for msg in messages %}
-                    <b>{{msg}}</b>
-                    {% endfor %}
-                    {% endif %}
-                <br>
-                <em>Si no estás registrado,<a href="{% url 'reg' %}">Regístrate</a></em>
-            </div>
         </form>
-        <hr>
-    </section>-->
-    <hr>
+
+    </section>
+
 <footer class="pie-pagina">
     <div class="grupo1">
         <div class="box">

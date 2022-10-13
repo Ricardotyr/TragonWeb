@@ -60,29 +60,31 @@
             </div>
         </div>
     </nav>
-
-    <div class="contenedorFomulario">
-        {% if "valido" in request.GET %}
-        <div class="alert alert-success" role="alert">
-            <p style="color: black;">Información enviada correctamente, gracias</p>
-        </div>
-        {% endif %}
-
-        <form action="" method="post" style="text-align: center;">
-            {% csrf_token %}
-            <table style="color: black; margin: 15px auto;">{{miFormulario.as_table}}</table>
-            <input type="submit" value="Enviar" style="width: 125px;">
-            &nbsp;&nbsp;
-            {% if messages %}
-            {% for msg in messages %}
-            <div class="alert alert-success" role="alert">
-                <b>{{msg}}</b>
+    <hr>    
+    <section class="form-contacto d-flex justify-content-center">
+        <div class="card col-sm-6 p-3">
+            <div class="mb-3">
+                <h2>Contacto</h2>
             </div>
-            {% endfor %}
+            {% if "valido" in request.GET %}
+            <div class="alert alert-success" role="alert">
+                <p style="color: black;">Información enviada correctamente, gracias</p>
+            </div>
             {% endif %}
-        </form>
-    </div>
+            <div class="mb-2">
+                <form action="" method="POST" class="text-align-center">
+                    {% csrf_token %}
+                    <div class="mb-2">
 
+                        <div class="form-outline mb-3">
+                            <table for="correo">{{miFormulario.as_table}}</table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <hr>
     <!----Footer-->
     <footer class="pie-pagina">
         <div class="grupo1">
