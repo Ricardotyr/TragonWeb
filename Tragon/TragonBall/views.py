@@ -4,13 +4,16 @@ from TragonBall.models import Cliente
 from django.contrib import messages
 from .forms import FormularioContacto
 from django.core.mail import EmailMessage
-
+from django.contrib.auth import login, logout, authenticate
 
 
 # Create your views here.
 
 def inicio(request):
     return render(request, 'inicio.html')
+
+def inicio2(request):
+    return render(request, "inicio2.html")
 
     
 def registroCliente(request):
@@ -41,29 +44,31 @@ def paginaLogin(request):
 def cerrarSesion(request):
     try:
         del request.session['Email']
+        
     except:
         return render(request, 'inicio.html')
     return render(request, 'inicio.html')
 
 
-# Contacto #
+# Contacto
 def contacto(request):
-    formulario_contacto=FormularioContacto()
-
+    formulario=FormularioContacto()
+    
     if request.method=="POST":
-        formulario_contacto=FormularioContacto(data=request.POST)
-        if formulario_contacto.is_valid():
+        formulario=FormularioContacto(data=request.POST)
+        if formulario.is_valid():
             nombre=request.POST.get("nombre")
-            email=request.POST.get("email")
-            contenido=request.POST.get("contenido")
+            correo=request.POST.get("correo")
+            mensaje=request.POST.get("mensaje")
 
-            email=EmailMessage("Mensaje desde Tragón Ball Z",
-            "El usuario con nombre {} con email {} envia lo siguiente:\n\n {}".format(nombre,email,contenido),
-            "",["tragonballzpyme@gmail.com"],reply_to=[email])
+            correo=EmailMessage("Mensaje desde Tragón Ball Z",
+            "El usuario con nombre {} y correo {}  envia lo siguiente:\n\n {}".format(nombre,correo,mensaje),
+            "",["tragonballzpyme@gmail.com"],reply_to=[correo])
 
-            try:
-                email.send()
-                return redirect("/contacto/?valido")
-            except:
-                return redirect("/contacto/?novalido")
-    return render(request, "contacto.html", {"miFormulario":formulario_contacto})
+            try: 
+                correo.send()
+                messages.success(request, 'Se ha enviado correctamente su mensaje')
+                return redirect("contacto")
+            except:    
+                return redirect("contacto")
+    return render(request, "contacto.html", {"miFormulario":formulario})

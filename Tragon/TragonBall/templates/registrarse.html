@@ -5,35 +5,61 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <!---LINK CSS-->
-    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/estilo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../static/js/jquery-3.6.1.min.js"></script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav class="nav-main">
-                <img src="{% static 'imagenes/pagina/brand1.png' %}" alt="Tragón Ball Z" class="nav-brand">
-            </nav>
-            <nav>
-                <a href="{% url 'inicio' %}">Inicio</a>
-                <a href="productos.html">Productos</a>
-                <a href="promociones.html">Promociones</a>
-                <a href="delivery.html">Delivery</a>
-                <a href="nosotros.html">Nosotros</a>
-            </nav>
-            <form action="../../form-result.php" method="post" target="_blank">
-                <p>
-                  <input type="search" name="busquedaitem" pattern="[A-Za-z0-9]{8,20}" title="Un producto o promoción válida debe estar dentro de sus catálogos pertenecientes" required>
-                  <input type="submit" value="Buscar">
-                  <a href="{% url 'reg' %}">registrarse</a> &nbsp;&nbsp; | &nbsp;
-                </p>
-            </form>
-            <!---Iconos Login y Carro-->
-            <section id="iconos">
-                <a href="login.html" class="fa-solid fa-user"></a>
-                <a href="carro.html" class="fa-solid fa-cart-shopping"></a>
-            </section>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'inicio' %}"><img src="../static/img/brand1.png" alt="Tragón Ball Z" width="200" height="70"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categorías
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Productos</a></li>
+                            <li><a class="dropdown-item" href="#">Promociones</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Delivery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'contacto' %}">Contáctanos</a>
+                    </li>
+                </ul>
+                <!-- Buscador -->
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+                <!-- Icons -->
+                <div class="cont-icon">
+                    <a href="{% url 'paginaLogin' %}" class="bi bi-person-circle"></a>
+                    <a href="" class="bi bi-cart-fill"></a>
+                    <!--{% if request.session.Email %}
+                    {{request.session.Email}} &nbsp; &nbsp; <a href="{% url 'paginaLogin' %}">cerrar sesión</a>
+                    {% else %}
+                    {% endif %}-->
+                </div>
+            </div>
         </div>
-    </header>
+    </nav>
     <hr>
     <section class="form-register">
         <form method="post">
@@ -57,7 +83,9 @@
                 &nbsp;&nbsp;
                 {% if messages %}
                 {% for msg in messages %}
-                <b>{{msg}}</b>
+                <div class="alert alert-success" role="alert">
+                    <b>{{msg}}</b>
+                </div>
                 {% endfor %}
                 {% endif %}
                 <br>
@@ -73,7 +101,7 @@
         <div class="box">
             <figure>
                 <a href="">
-                    <img src="{% static 'imagenes/pagina/esfera.png' %}" alt="esfera">
+                    <img src="../static/img/esfera.png" alt="esfera">
                 </a>
             </figure>
         </div>

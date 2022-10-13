@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- LINK CSS -->
     <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/css/estilo.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -41,50 +40,49 @@
                         <a class="nav-link active" href="#">Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Contáctanos</a>
+                        <a class="nav-link active" href="{% url 'contacto' %}">Contáctanos</a>
                     </li>
-                    {% if user.is_authenticated %}
-                    <li>
-                        <a href="{% url 'logout' %}">cerrar sesión</a>
-                    </li>
-                    <li>
-                        <a href="#">@{{user.username}}</a>
-                    </li>
-                    {% else %}
-                    <!--<li>
-                        <a href="{% url 'login' %}">iniciar sesión</a>
-                    </li> !-->
-    
-                    {% endif %}
                 </ul>
                 <!-- Buscador -->
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
                 <!-- Icons -->
                 <div class="cont-icon">
-                    <a href="{% url 'paginaLogin' %}" class="bi bi-person-circle"></a>
-                    <a href="" class="bi bi-cart-fill"></a>
+                  <a href="{% url 'paginaLogin' %}" class="bi bi-person-circle"></a>
+                  <a href="" class="bi bi-cart-fill"></a>
                     {% if request.session.Email %}
-                    {{request.session.Email}} &nbsp; &nbsp; <a href="{% url 'paginaLogin' %}">cerrar sesión</a>
+                    {{request.session.Email}} &nbsp; &nbsp; <a href="{% url 'cerrarSesion' %}">cerrar sesión</a>
                     {% else %}
                     {% endif %}
                 </div>
             </div>
         </div>
     </nav>
-    <div class="contenedorFormulario">
+
+    <div class="contenedorFomulario">
         {% if "valido" in request.GET %}
-            <p style="color: white;"> Información enviada correctamente, gracias</p>
+        <div class="alert alert-success" role="alert">
+            <p style="color: black;">Información enviada correctamente, gracias</p>
+        </div>
         {% endif %}
 
         <form action="" method="post" style="text-align: center;">
             {% csrf_token %}
-            <table style="color:aliceblue; margin: 15px auto;">{{miformulario.as_table}}</table>
+            <table style="color: black; margin: 15px auto;">{{miFormulario.as_table}}</table>
             <input type="submit" value="Enviar" style="width: 125px;">
+            &nbsp;&nbsp;
+            {% if messages %}
+            {% for msg in messages %}
+            <div class="alert alert-success" role="alert">
+                <b>{{msg}}</b>
+            </div>
+            {% endfor %}
+            {% endif %}
         </form>
     </div>
+
     <!----Footer-->
     <footer class="pie-pagina">
         <div class="grupo1">
@@ -95,7 +93,7 @@
                     </a>
                 </figure>
             </div>
-
+    
             <div class="box">
                 <h2>Contacto</h2>
                 <div class="cont"></div>
@@ -105,7 +103,7 @@
                 <a href= "tel:+56987654321">+569 8765 4321</a>
                 <p>Ponte en comunicación con nosotros!</p>
             </div>
-
+    
             <div class="box">
                 <h2>Ayuda pedidos</h2>
                 <div class="ayuda">
@@ -116,9 +114,9 @@
                 </div>
             </div>
         </div>
+
         <div class="grupo-2"></div>
             <small>&copy; 2021 <b>Tragón Ball Z</b> - Todos los derechos reservados.</small>
     </footer>
-    
 </body>
 </html>

@@ -21,6 +21,10 @@
     background-position: center center;
 }
 
+.gradient-custom{
+    background: #e8eaeb;
+}
+
 /*footer*/
 .pie-pagina .grupo1{
     width: 90%;
