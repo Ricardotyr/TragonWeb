@@ -15,7 +15,7 @@ def inicio(request):
 def inicio2(request):
     return render(request, "inicio2.html")
 
-
+#Registro
 def registroCliente(request):
     if request.method=='POST':
         nombre=request.POST['nombre']
@@ -30,6 +30,7 @@ def registroCliente(request):
     else:
         return render(request, 'registrarse.html')
 
+#Login
 def paginaLogin(request):
     if request.method=='POST':
         try:
@@ -49,6 +50,10 @@ def cerrarSesion(request):
         return render(request, 'inicio.html')
     return render(request, 'inicio.html')
 
+
+#Delivery
+def delivery(request):
+    return render(request, 'delivery.html')
 
 #Nosotros
 def nosotros(request):

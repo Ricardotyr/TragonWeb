@@ -38,12 +38,19 @@
                         <a class="nav-link active" href="#">Delivery</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Nosotros</a>
+                        <a class="nav-link active" href="{% url 'nosotros' %}">Nosotros</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="{% url 'contacto' %}">Contáctanos</a>
                     </li>
                 </ul>
+                <h5 style="margin-right: 20px">
+                    {% if request.session.Email %}
+                      {{request.session.Email}} &nbsp; &nbsp; <a class="text-decoration-none" href="{% url 'cerrarSesion' %}">Cerrar sesión</a>
+                      {% else %}
+                      {% endif %}
+                </h5> 
+
                 <!-- Buscador -->
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="" aria-label="Search" required>
@@ -53,10 +60,6 @@
                 <div class="cont-icon">
                   <a href="{% url 'paginaLogin' %}" class="bi bi-person-circle"></a>
                   <a href="" class="bi bi-cart-fill"></a>
-                    {% if request.session.Email %}
-                    {{request.session.Email}} &nbsp; &nbsp; <a href="{% url 'cerrarSesion' %}">cerrar sesión</a>
-                    {% else %}
-                    {% endif %}
                 </div>
             </div>
         </div>
@@ -71,9 +74,6 @@
                 <h4 class="text-center">Escribenos un mensaje a nuestro correo electrónico.</h4>
             </div>
             {% if "valido" in request.GET %}
-            <div class="alert alert-success mt-2" role="alert">
-                <p style="color: black;">Información enviada correctamente.</p>
-            </div>
             {% endif %}
             <div class="mb-2 ">
                 <form action="" method="POST" class="">
@@ -82,11 +82,11 @@
 
                         <div class="form-outline mb-3">
                             <div class=" mt-2 w-100" for="correo">{{miFormulario.as_p}}</div>
-                            <input type="submit" value="Enviar" style="width: 50%;">
+                            <input type="submit" value="Enviar" style="width: 44%; margin-left: 85px;">
                             &nbsp;&nbsp;
                             {% if messages %}
                             {% for msg in messages %}
-                            <div class="alert alert-success mt-2" role="alert">
+                            <div class="alert alert-success mt-3 w-50" style="margin-left: 250px;" role="alert">
                             <b>{{msg}}</b>
                             </div>
                             {% endfor %}
