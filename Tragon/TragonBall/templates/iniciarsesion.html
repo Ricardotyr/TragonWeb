@@ -33,15 +33,15 @@
                             Categorías
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Productos</a></li>
-                            <li><a class="dropdown-item" href="#">Promociones</a></li>
+                            <li><a class="dropdown-item" href="{% url 'producto' %}">Productos</a></li>
+                            <li><a class="dropdown-item" href="{% url 'promocion' %}">Promociones</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Delivery</a>
+                        <a class="nav-link active" href="{% url 'delivery' %}">Delivery</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Nosotros</a>
+                        <a class="nav-link active" href="{% url 'nosotros' %}">Nosotros</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="{% url 'contacto' %}">Contáctanos</a>
@@ -54,8 +54,8 @@
                 </form>
                 <!-- Icons -->
                 <div class="cont-icon">
-                    <a href="{% url 'paginaLogin' %}" class="bi bi-person-circle"></a>
                     <a href="" class="bi bi-cart-fill"></a>
+                    <a href="{% url 'paginaLogin' %}" class="bi bi-person-circle"></a>
                 </div>
           </div>
         </div>

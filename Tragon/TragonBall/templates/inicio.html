@@ -31,8 +31,8 @@
                   Categorías
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Productos</a></li>
-                  <li><a class="dropdown-item" href="#">Promociones</a></li>
+                  <li><a class="dropdown-item" href="{% url 'producto' %}">Productos</a></li>
+                  <li><a class="dropdown-item" href="{% url 'promocion' %}">Promociones</a></li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -46,13 +46,6 @@
               </li>
             </ul>
 
-            <h5 style="margin-right: 20px">
-              {% if request.session.Email %}
-                {{request.session.Email}} &nbsp; &nbsp; <a class="text-decoration-none" href="{% url 'cerrarSesion' %}">Cerrar sesión</a>
-                {% else %}
-                {% endif %}
-            </h5> 
-
             <!-- Buscador -->
             <form class="d-flex">
               <i class="bi bi-search" style="margin-right: 10px; margin-top: 5px;"></i><input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" required>
@@ -60,12 +53,19 @@
             </form>
             <!-- Icons -->
             <div class="cont-icon">
-              <a href="{% url 'paginaLogin' %}" class="bi bi-person-circle"></a>
               <a href="" class="bi bi-cart-fill"></a> 
             </div>
+            {% if request.session.Email %}
+                {{request.session.Email}} &nbsp; &nbsp; <a class="text-decoration-none" href="{% url 'cerrarSesion' %}">Cerrar sesión</a>
+                {% else %}
+                <div class="cont-icon">
+                  <a href="{% url 'paginaLogin' %}" class="bi bi-person-circle"></a>
+                  <!--<a href="" class="bi bi-cart-fill"></a>-->
+                </div>
+                {% endif %}
           </div>
         </div>
-      </nav>
+    </nav>
 
       <!-- Carrusel -->
       <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -149,7 +149,7 @@
             
         </div>
       </div>
-      <a href="#" class="btn btn-primary mt-0" style="background-color: yellow; color: black; font-weight: bold; margin-left: 860px;">Ver todas las promociones</a>
+      <a href="{% url 'promocion' %}" class="btn btn-primary mt-0" style="background-color: yellow; color: black; font-weight: bold; margin-left: 860px;">Ver todas las promociones</a>
       <hr>
       <!-- Tarjetas Productos -->
       <div class="title text-center py-2">
@@ -195,14 +195,14 @@
             </div>
         </div>
       </div>
-      <a href="#" class="btn btn-primary" style="background-color: yellow; color: black; font-weight: bold; margin-left: 860px;">Ver todos los productos</a>
+      <a href="{% url 'producto' %}" class="btn btn-primary" style="background-color: yellow; color: black; font-weight: bold; margin-left: 860px;">Ver todos los productos</a>
       <p></p>
       <br>
       <!--Delivery-->
       <section id="delivery" >
         <form action="delivery.html">
         <h1>Revisa si hay delivery en tu zona</h1>
-        <a href="#" class="btn btn-primary" style="background-color: yellow; color: black; font-weight: bold;">Ver zonas</a>
+        <a href="{% url 'delivery' %}" class="btn btn-primary" style="background-color: yellow; color: black; font-weight: bold;">Ver zonas</a>
         </form>
       </section>
       <hr>
@@ -231,7 +231,7 @@
             <div class="box">
                 <h2>Ayuda pedidos</h2>
                 <div class="ayuda">
-                    <a  href="delivery.html">Localizador de comunas</a>
+                    <a  href="{% url 'delivery' %}">Localizador de comunas</a>
                     <p></p>
                     <a  href="#">Carro de compras</a>
                     <p></p>

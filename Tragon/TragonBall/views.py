@@ -1,6 +1,6 @@
 from email.message import EmailMessage
 from django.shortcuts import render, redirect
-from TragonBall.models import Cliente
+from TragonBall.models import Cliente, ProductoElaborado
 from django.contrib import messages
 from .forms import FormularioContacto
 from django.core.mail import EmailMessage
@@ -9,11 +9,23 @@ from django.contrib.auth import login, logout, authenticate
 
 # Create your views here.
 
+# Inicio
 def inicio(request):
     return render(request, 'inicio.html')
 
 def inicio2(request):
     return render(request, "inicio2.html")
+
+
+# Productos
+def producto(request):
+    producto = ProductoElaborado.objects.all()
+    return render(request,'productos.html', {"producto":producto})
+
+# Promociones
+def promocion(request):
+    promocion = ProductoElaborado.objects.all()
+    return render(request,'promocion.html', {"promocion":promocion})
 
 #Registro
 def registroCliente(request):
