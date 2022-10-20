@@ -117,7 +117,7 @@
                                     <div class="row d-flex align-items-center">
                                         <div class="col-md-6 col-xl-7"> 
                                             <div class="text-center pt-md-3 pb-5 my-md-1">
-                                                <img src="../static/img/seeds-son-goku.jpg" style="height: 500px; width: 500px;" alt="">
+                                                <img src="../static/img/seeds-son-goku.jpg" style="height: 25%; width: 90%;" alt="">
                                             </div>                                                
                                         </div>
                                         <div class="col-md-6 col-xl-4 text-center">
@@ -127,32 +127,32 @@
                                             {% csrf_token %}
                                             <div class="form-outline mb-3">
                                                 <label for="nombre" class="form-label">Nombre</label>
-                                                <input type="text" onkeypress="return SoloLetras(event)" name="nombre" id="nombre" placeholder="Ingrese su nombre" class="form.control form-control-lg" maxlength="30" required>                                               
+                                                <input style="width: 100%;" type="text" onkeypress="return SoloLetras(event)" name="nombre" id="nombre" placeholder="Ingrese su nombre" class="form.control form-control-lg" maxlength="30" required>                                               
                                             </div>
 
                                             <div class="form-outline mb-3">
                                                 <label for="apellido" class="form-label">Apellido</label>
-                                                <input type="text" onkeypress="return SoloLetras(event)" id="apellido" placeholder="Ingrese su apellido" name="apellido"  class="form-control form-control-lg" maxlength="30" required>
+                                                <input style="width: 100%;" type="text" onkeypress="return SoloLetras(event)" id="apellido" placeholder="Ingrese su apellido" name="apellido"  class="form-control form-control-lg" maxlength="30" required>
                                             </div>
 
                                             <div class="form-outline mb-3">
                                                 <label for="correo" class="form-label">Correo electrónico</label>
-                                                <input type="email" id="correo" placeholder="Ingrese su email" name="correo"  class="form-control form-control-lg" required>
+                                                <input style="width: 100%;" type="email" id="correo" placeholder="Ingrese su email" name="correo"  class="form-control form-control-lg" required>
                                             </div>
 
                                             <div class="form-outline mb-3">
                                                 <label for="password" class="form-label">Contraseña</label>
-                                                <input type="password" id="password" placeholder="Ingrese contraseña deseada" name="password"  class="form-control form-control-lg" maxlength="16" required>
+                                                <input style="width: 100%;" type="password" id="password" placeholder="Ingrese contraseña deseada" name="password"  class="form-control form-control-lg" maxlength="16" required>
                                             </div>
 
                                             <div class="form-outline mb-3">
                                                 <label for="telefono" class="form-label">Celular</label>
-                                                <input type="tel" onkeypress="return SoloNumeros(event)" id="telefono" placeholder="Ingrese número de teléfono" name="telefono"  class="form-control form-control-lg" maxlength="9" required>
+                                                <input style="width: 100%;" type="tel" onkeypress="return SoloNumeros(event)" id="telefono" placeholder="Ingrese número de teléfono" name="telefono"  class="form-control form-control-lg" maxlength="9" required>
                                             </div>
 
                                             <div class="form-outline mb-3">
                                                 <label for="fecha" class="form-label">Fecha nacimiento</label>
-                                                <input type="date" id="fecha" placeholder="Ingrese contraseña deseada" name="fecha"  class="form-control form-control-lg" required>
+                                                <input style="width: 100%;" type="date" id="fecha" placeholder="Ingrese contraseña deseada" name="fecha"  class="form-control form-control-lg" required>
                                             </div>
 
                                             <div class="form-check">
@@ -194,12 +194,12 @@
         <div class="box">
             <figure>
                 <a href="">
-                    <img src="../static/img/esfera.png" alt="esfera">
+                    <img style="width: 75%; margin-left: 12%;" src="../static/img/esfera.png" alt="esfera">
                 </a>
             </figure>
         </div>
 
-        <div class="box">
+        <div class="box text-center">
             <h2>Contacto</h2>
             <div class="cont"></div>
             <p>Correo electrónico:</p>
@@ -209,7 +209,7 @@
             <p>Ponte en comunicación con nosotros!</p>
         </div>
 
-        <div class="box">
+        <div class="box text-center">
             <h2>Ayuda pedidos</h2>
             <div class="ayuda">
                 <a href="delivery.html">Localizador de comunas</a>
