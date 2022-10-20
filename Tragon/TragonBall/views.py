@@ -19,12 +19,12 @@ def inicio2(request):
 
 # Productos
 def producto(request):
-    producto = ProductoElaborado.objects.all()
+    producto = ProductoElaborado.objects.filter(categoria_id_categoria__in = [4,5,6,7])
     return render(request,'productos.html', {"producto":producto})
 
 # Promociones
 def promocion(request):
-    promocion = ProductoElaborado.objects.all()
+    promocion = ProductoElaborado.objects.filter(categoria_id_categoria='9')
     return render(request,'promocion.html', {"promocion":promocion})
 
 #Registro

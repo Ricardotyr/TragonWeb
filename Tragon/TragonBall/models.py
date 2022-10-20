@@ -7,7 +7,7 @@ class Categoria(models.Model):
     fecharegistrocategoria = models.DateField(db_column='FechaRegistroCategoria')  # Field name made lowercase.
 
     def __str__(self):
-        return self.id_categoria
+        return str(self.id_categoria)
 
 class Cliente(models.Model):
     id_cliente = models.AutoField(db_column='ID_Cliente', primary_key=True)  # Field name made lowercase.

@@ -67,10 +67,10 @@
         </div>
     </nav>
 
-    <!-- Listado de productos -->
+    <!-- Listado de Promociones -->
     <div class="mt-3">
-        {% if producto %}
-            {% for ProductoElaborado in producto %}
+        {% if promocion %}
+            {% for ProductoElaborado in promocion %}
                 {% if forloop.first %}<div class="row">{% endif %}
                 <div class="col-4">
                     <div class="card">
@@ -90,7 +90,8 @@
         {% else %}
                 <div class="alert alert-danger">No hay nada aquí</div>
         {% endif %}
-    </div> 
+    </div>
+    <hr>
 
     <!----Footer-->
     <footer class="pie-pagina">
