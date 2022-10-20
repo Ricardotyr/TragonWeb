@@ -109,9 +109,9 @@
         <img src="../static/img/Promos.png" alt="">
       </div>
       <br>
-      <div class="container mt-0 shadow-lg p-4 mb-5 bg-white rounded">
+      <div class="container mt-0 shadow-lg p-0 mb-5 bg-white rounded">
         <div class="row mx-5">
-            <div class="col ml-5">
+            <div class="col ml-5 p-2">
                 <div class="card" style="width: 23rem; background-color: #ffc340;">
                     <img src="../static/img/ComboHamb.jpg" class="card-img-top" alt="..." style="width: 100%; height: 300px;">
                     <div class="card-body">
@@ -123,7 +123,7 @@
                 </div>
             </div>
     
-            <div class="col ml-5">
+            <div class="col ml-5 p-2">
                 <div class="card" style="width: 23rem; background-color: #ffc340;">
                     <img src="../static/img/ComboPizz.jpeg" class="card-img-top" alt="..." style="width: 100%; height: 300px;">
                     <div class="card-body">
@@ -135,7 +135,7 @@
                 </div>
             </div>
     
-            <div class="col ml-5 ">
+            <div class="col ml-5 p-2">
                 <div class="card" style="width: 23rem; background-color: #ffc340;">
                     <img src="../static/img/promopollo.jpeg" class="card-img-top" alt="..." style="width: 100%; height: 300px;">
                     <div class="card-body">
@@ -149,16 +149,18 @@
             
         </div>
       </div>
-      <a href="{% url 'promocion' %}" class="btn btn-primary mt-0" style="background-color: yellow; color: black; font-weight: bold; margin-left: 860px;">Ver todas las promociones</a>
+      <div class="title text-center py-2">
+        <a href="{% url 'promocion' %}" class="btn btn-primary mt-0" style="background-color: yellow; color: black; font-weight: bold;">Ver todas las promociones</a>
+      </div>
       <hr>
       <!-- Tarjetas Productos -->
       <div class="title text-center py-2">
         <img src="../static/img/Productos.png" alt="">
       </div>
       <br>
-      <div class="container shadow-lg p-3 mb-5 bg-white rounded">
+      <div class="container shadow-lg p-0 mb-5 bg-white rounded">
         <div class="row mx-5">
-            <div class="col ml-5">
+            <div class="col ml-5 p-2">
                 <div class="card shadow-sm" style="width: 23rem; background-color: #ffc340;">
                     <img src="../static/img/as.jpg" class="card-img-top" alt="..." style="width: 100%; height: 300px;">
                     <div class="card-body">
@@ -170,7 +172,7 @@
                 </div>
             </div>
     
-            <div class="col ml-5">
+            <div class="col ml-5 p-2">
                 <div class="card" style="width: 23rem; background-color: #ffc340;">
                     <img src="../static/img/chorillana.jpg" class="card-img-top" alt="..." style="width: 100%; height: 300px;">
                     <div class="card-body">
@@ -182,7 +184,7 @@
                 </div>
             </div>
     
-            <div class="col ml-5">
+            <div class="col ml-5 p-2">
                 <div class="card" style="width: 23rem; background-color: #ffc340;">
                     <img src="../static/img/papas.png" class="card-img-top" alt="..." style="width: 100%; height: 300px;">
                     <div class="card-body">
@@ -195,7 +197,9 @@
             </div>
         </div>
       </div>
-      <a href="{% url 'producto' %}" class="btn btn-primary" style="background-color: yellow; color: black; font-weight: bold; margin-left: 860px;">Ver todos los productos</a>
+      <div class="title text-center py-2">
+        <a href="{% url 'producto' %}" class="btn btn-primary" style="background-color: yellow; color: black; font-weight: bold;">Ver todos los productos</a>
+      </div>
       <p></p>
       <br>
       <!--Delivery-->

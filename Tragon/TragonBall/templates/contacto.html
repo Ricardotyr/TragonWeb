@@ -67,10 +67,10 @@
     </nav>
     <hr>    
     <section class="form-contacto d-flex justify-content-center">
-        <div class="card col-sm-6 p-3 text-center">
+        <div class="card col-sm-10 p-3 text-center">
             <div class="mb-3">
                 
-                <img src="../static/img/Contacto.png" alt="">
+                <img src="../static/img/Contacto.png" alt="" style="margin-left: 5%;">
                 <p></p>
                 <h4 class="text-center">Escribenos un mensaje a nuestro correo electrónico.</h4>
             </div>
@@ -81,9 +81,9 @@
                     {% csrf_token %}
                     <div class="mb-2">
 
-                        <div class="form-outline mb-3">
-                            <div class=" mt-2 w-100" for="correo">{{miFormulario.as_p}}</div>
-                            <input type="submit" value="Enviar" style="width: 44%; margin-left: 9%;">
+                        <div class="form-outline mb-3 text-center">
+                            <div class=" mt-2 w-100 align-items-center" for="correo">{{miFormulario.as_p}}</div>
+                            <input type="submit" value="Enviar" style="width: 29%; margin-left: 5%;">
                             &nbsp;&nbsp;
                             {% if messages %}
                             {% for msg in messages %}
