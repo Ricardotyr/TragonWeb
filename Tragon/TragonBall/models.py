@@ -76,6 +76,9 @@ class ProductoElaborado(models.Model):
     estado_producto = models.BooleanField(db_column='Estado_Producto')  # Field name made lowercase.
     fecharegistroproducto = models.DateField(db_column='FechaRegistroProducto')  # Field name made lowercase.
     imagen = models.ImageField(upload_to='Imagen', blank=True, null=True)  # Field name made lowercase.
+
+    def __str__(self):
+        return self.id_producto
     
 
 class Proveedor(models.Model):

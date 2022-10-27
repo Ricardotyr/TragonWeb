@@ -98,3 +98,6 @@ def contacto(request):
 #Tipos de pago
 def tiposPago(request):
     return render(request, 'tiposPago.html')
+
+def carro(request):
+    return render(request, "carro.html")

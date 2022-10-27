@@ -17,32 +17,32 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light ">
         <div class="container-fluid ">
-            <a class="navbar-brand" href="{% url 'inicio' %}"><img src="../static/img/brand1.png" alt="Tragón Ball Z" width="200" height="70"></a>
+            <a class="navbar-brand" href="{% url 'TragonBall:inicio' %}"><img src="../static/img/brand1.png" alt="Tragón Ball Z" width="200" height="70"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'TragonBall:inicio' %}">Inicio</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Categorías
                         </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{% url 'producto' %}">Productos</a></li>
-                        <li><a class="dropdown-item" href="{% url 'promocion' %}">Promociones</a></li>
+                        <li><a class="dropdown-item" href="{% url 'TragonBall:producto' %}">Productos</a></li>
+                        <li><a class="dropdown-item" href="{% url 'TragonBall:promocion' %}">Promociones</a></li>
                     </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'delivery' %}">Delivery</a>
+                        <a class="nav-link active" href="{% url 'TragonBall:delivery' %}">Delivery</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'nosotros' %}">Nosotros</a>
+                        <a class="nav-link active" href="{% url 'TragonBall:nosotros' %}">Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'contacto' %}">Contáctanos</a>
+                        <a class="nav-link active" href="{% url 'TragonBall:contacto' %}">Contáctanos</a>
                     </li>
                 </ul>
 
@@ -53,13 +53,13 @@
                 </form>
                 <!-- Icons -->
                 <div class="cont-icon">
-                    <a href="" class="bi bi-cart-fill"></a> 
+                    <a href="{% url 'TragonBall:carro' %}" class="bi bi-cart-fill"></a> 
                 </div>
                 {% if request.session.Email %}
-                    {{request.session.Email}} &nbsp; &nbsp; <a class="text-decoration-none" href="{% url 'cerrarSesion' %}">Cerrar sesión</a>
+                    {{request.session.Email}} &nbsp; &nbsp; <a class="text-decoration-none" href="{% url 'TragonBall:cerrarSesion' %}">Cerrar sesión</a>
                     {% else %}
                     <div class="cont-icon">
-                        <a href="{% url 'paginaLogin' %}" class="bi bi-person-circle"></a>
+                        <a href="{% url 'TragonBall:paginaLogin' %}" class="bi bi-person-circle"></a>
                         <!--<a href="" class="bi bi-cart-fill"></a>-->
                     </div>
                     {% endif %}
@@ -82,7 +82,7 @@
                             <hr>
                             <h7 class="card-subtitle text-ganer">${{ProductoElaborado.precioventa}}</h7>
                             <hr>
-                            <a href="#" class="btn btn-primary" style="background-color: yellow; color:black; font-weight: bold;">Agregar al carro</a>
+                            <a href="{% url 'carro:agregar' ProductoElaborado.id_producto %}" class="btn btn-primary" style="background-color: yellow; color:black; font-weight: bold;">Agregar al carro</a>
                         </div>
                     </div>
                 </div>
@@ -90,7 +90,6 @@
                 {% if forloop.last %}</div>{% endif %}
             {% endfor %}
         {% else %}
-                <div class="alert alert-danger">No hay nada aquí</div>
         {% endif %}
     </div> 
     <hr>
@@ -119,11 +118,11 @@
             <div class="box text-center">
                 <h2>Ayuda pedidos</h2>
                 <div class="ayuda">
-                    <a  href="delivery.html">Localizador de comunas</a>
+                    <a  href="{% url 'TragonBall:delivery' %}">Localizador de comunas</a>
                     <p></p>
                     <a  href="#">Carro de compras</a>
                     <p></p>
-                    <a  href="{% url 'tiposPago' %}">Tipos de pago</a>
+                    <a  href="{% url 'TragonBall:tiposPago' %}">Tipos de pago</a>
                 </div>
             </div>
         </div>

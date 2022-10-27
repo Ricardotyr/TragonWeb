@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
 
+app_name = "TragonBall"
+
 urlpatterns = [
     path('', views.inicio, name="inicio"),
     path('inicio2/', views.inicio2, name="inicio2"),
@@ -13,4 +15,5 @@ urlpatterns = [
     path('delivery', views.delivery, name="delivery"),
     path('producto', views.producto, name="producto"),
     path('promocion', views.promocion, name="promocion"),
+    path('carro', views.carro, name="carro"),
 ]
