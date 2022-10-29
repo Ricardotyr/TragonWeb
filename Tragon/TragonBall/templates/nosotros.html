@@ -53,7 +53,7 @@
             </form>
             <!-- Icons -->
             <div class="cont-icon">
-              <a href="" class="bi bi-cart-fill"></a> 
+              <a href="{% url 'TragonBall:carro' %}" class="bi bi-cart-fill m-1"></a> 
             </div>
             {% if request.session.Email %}
               {{request.session.Email}} &nbsp; &nbsp; <a class="text-decoration-none" href="{% url 'TragonBall:cerrarSesion' %}">Cerrar sesión</a>
@@ -70,16 +70,21 @@
     <!----Información-->
     <section id="info">
         <div class="container">
-            <h2 class="text-center">¿Quienes somos?</h2>
-            <p class="text-center">Somos un local de comida rápida con 5 años de experiencia. Nuestra misión es que tu estómago
+          <div class="title text-center py-2 mt-4">
+            <img src="../static/img/quienes-somos.png" alt="">
+          </div>
+          <br>
+            <p class="text-center" style="font-size: 20px;">Somos un local de comida rápida con 5 años de experiencia. Nuestra misión es que tu estómago
                 esté contento y a la vez puedas disfrutar el placer de comer un buen bajón.
             </p>
             <img src="../static/img/pngwing.com.png"  alt="" style="width: 30%; margin-left: 35%;">
             <hr>
             <div class="Mapa">
-            <h2 class="text-center">Ubicación</h2>
-            
-            <p class="text-center">Estamos ubicados en Eyzaguirre 650, San Bernardo, Región Metropolitana.</p>
+            <div class="title text-center py-2 mt-4">
+              <img src="../static/img/ubicacion.png" alt="">
+            </div>
+            <br>
+            <p class="text-center" style="font-size: 20px;">Estamos ubicados en Eyzaguirre 650, San Bernardo, Región Metropolitana.</p>
             <iframe class="shadow-lg p-3 mb-5 bg-white rounded" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.38755063933!2d-70.70905998428192!3d-33.595247612345275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662dbe3ead2dd8d%3A0xbd00528d7438c3fc!2sMall%20Paseo%20San%20Bernardo!5e0!3m2!1ses-419!2scl!4v1661890384142!5m2!1ses-419!2scl" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
             </div>

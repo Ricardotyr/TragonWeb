@@ -52,7 +52,7 @@
                 </form>
                 <!-- Icons -->
                 <div class="cont-icon">
-                    <a href="" class="bi bi-cart-fill"></a> 
+                    <a href="{% url 'TragonBall:carro' %}" class="bi bi-cart-fill m-1"></a> 
                 </div>
                 {% if request.session.Email %}
                     {{request.session.Email}} &nbsp; &nbsp; <a class="text-decoration-none" href="{% url 'TragonBall:cerrarSesion' %}">Cerrar sesión</a>
@@ -67,12 +67,12 @@
     </nav>
     <hr>    
     <section class="form-contacto d-flex justify-content-center">
-        <div class="card col-sm-10 p-3 text-center">
+        <div class="card col-sm-10 p-3 text-center" style="background-image: url(../static/img/contactogok.png); background-repeat: no-repeat; background-position: left;">
             <div class="mb-3">
                 
-                <img src="../static/img/Contacto.png" alt="" style="margin-left: 5%;">
+                <img src="../static/img/Contacto.png" alt="" style="margin-left: 44%;">
                 <p></p>
-                <h4 class="text-center">Escribenos un mensaje a nuestro correo electrónico.</h4>
+                <h4 class="text-center" style="margin-left: 44%">Escribenos un mensaje a nuestro correo electrónico.</h4>
             </div>
             {% if "valido" in request.GET %}
             {% endif %}
@@ -82,8 +82,8 @@
                     <div class="mb-2">
 
                         <div class="form-outline mb-3 text-center">
-                            <div class=" mt-2 w-100 align-items-center" for="correo">{{miFormulario.as_p}}</div>
-                            <input type="submit" value="Enviar" style="width: 29%; margin-left: 5%;">
+                            <div class=" mt-2 w-100 align-items-center" style="margin-left: 20%;" for="correo">{{miFormulario.as_p}}</div>
+                            <input type="submit" value="Enviar" style="width: 29%; margin-left: 43%;">
                             &nbsp;&nbsp;
                             {% if messages %}
                             {% for msg in messages %}

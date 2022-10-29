@@ -1,10 +1,12 @@
+<hr>
 <table class="table table-bordered" style="color: black;">
+    
     <thead>
-        <tr>
-            <th colspan="3" class="text-center">
-                Carro compras
-            </th>
-        </tr>
+        
+        <div class="title text-center py-2 mt-4">
+            <img src="../static/img/Carro.png" style="width: 60%;" alt="">
+        </div>
+        <hr>
         <tr>
             <th>Producto</th>
             <th>Cantidad</th>
@@ -24,12 +26,13 @@
                         ${{value.precio}}
                     </td>
                 </tr>
+                
             {% endfor%}
         {% else %}
             <tr>
                 <th colspan="3">
                     <div class="alert alert-danger text-center">
-                        Sin productos
+                        No hay productos, agrega productos al carro.
                     </div>
 
                 </th>
@@ -44,3 +47,4 @@
         </tr>
     </tfoot>
 </table>
+<a href="" class="btn btn-primary w-100 " style="background-color: #ffc340; color:black; font-weight: bold;">Realizar compra</a>

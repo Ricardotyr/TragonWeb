@@ -54,7 +54,7 @@
             </form>
             <!-- Icons -->
             <div class="cont-icon">
-              <a href="" class="bi bi-cart-fill"></a> 
+              <a href="{% url 'TragonBall:carro' %}" class="bi bi-cart-fill"></a> 
             </div>
             {% if request.session.Email %}
               {{request.session.Email}} &nbsp; &nbsp; <a class="text-decoration-none" href="{% url 'TragonBall:cerrarSesion' %}">Cerrar sesión</a>
@@ -70,7 +70,7 @@
       
     
 
-    <section class="tipos-pago" style="background-image: url('../static/img/kamehouse.jpg');" >
+    <section class="tipos-pago" style="background-image: url('../static/img/kamehouse.jpg'); background-position: center; background-size: cover;" >
         <img src="../static/img/TiposPago.png" alt="" style="margin-left: 750px; margin-top: 20px;">
         <p></p>
         <div class="card mb-3 shadow-lg p-3 mb-5 bg-white rounded col-sm-6 p-3" style="max-width: 540px; margin-left: 700px; margin-top: 20px;">

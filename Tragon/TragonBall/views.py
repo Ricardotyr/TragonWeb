@@ -11,11 +11,7 @@ from django.contrib.auth import login, logout, authenticate
 
 # Inicio
 def inicio(request):
-    return render(request, 'inicio.html')
-
-def inicio2(request):
-    return render(request, "inicio2.html")
-
+    return render(request, "inicio.html")
 
 # Productos
 def producto(request):
@@ -90,9 +86,9 @@ def contacto(request):
             try: 
                 correo.send()
                 messages.success(request, 'Se ha enviado correctamente su mensaje')
-                return redirect("contacto")
+                return redirect("TragonBall:contacto")
             except:    
-                return redirect("contacto")
+                return redirect("TragonBall:contacto")
     return render(request, "contacto.html", {"miFormulario":formulario})
 
 #Tipos de pago

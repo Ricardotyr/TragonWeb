@@ -53,7 +53,7 @@
                 </form>
                 <!-- Icons -->
                 <div class="cont-icon">
-                    <a href="{% url 'TragonBall:carro' %}" class="bi bi-cart-fill"></a> 
+                    <a href="{% url 'TragonBall:carro' %}" class="bi bi-cart-fill m-1"></a> 
                 </div>
                 {% if request.session.Email %}
                     {{request.session.Email}} &nbsp; &nbsp; <a class="text-decoration-none" href="{% url 'TragonBall:cerrarSesion' %}">Cerrar sesión</a>
@@ -66,8 +66,14 @@
             </div>
         </div>
     </nav>
-
+    <hr>
     <!-- Listado de Promociones -->
+    <div class="title text-center py-2 mt-4">
+        <img src="../static/img/Promos.png" alt="">
+    </div>
+    <hr>
+
+
     <div class="container mt-2">
         {% if promocion %}
             {% for ProductoElaborado in promocion %}

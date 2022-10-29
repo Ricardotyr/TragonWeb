@@ -53,7 +53,7 @@
                 </form>
                 <!-- Icons -->
                 <div class="cont-icon">
-                    <a href="" class="bi bi-cart-fill"></a> 
+                    <a href="" class="bi bi-cart-fill m-1"></a> 
                 </div>
                 {% if request.session.Email %}
                     {{request.session.Email}} &nbsp; &nbsp; <a class="text-decoration-none" href="{% url 'TragonBall:cerrarSesion' %}">Cerrar sesión</a>
@@ -70,14 +70,18 @@
         <div style="text-align: center;">
             <!--<p style="color: black;">Total: ${{importe_total_carro}}</p>-->
             {% include "carro/widget.html" %}
+            <img src="../static/img/gokusujeta.png" alt="" style="width: 50%; height: 20%; margin-top: 0%;">
         </div>
     </div>
     <hr>
+    
 
     <!----Footer-->
-    <footer class="pie-pagina">
+    <footer class="pie-pagina" style="margin-top: 2%;">
+        
         <div class="grupo1">
             <div class="box">
+                
                 <figure>
                     <a href="">
                         <img style="width: 75%; margin-left: 12%;" src="../static/img/esfera.png" alt="esfera">

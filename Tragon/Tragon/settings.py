@@ -84,7 +84,7 @@ DATABASES = {
         'NAME':'Prueba',
         'USER': '',
         'PASSWORD': '',
-        'HOST': 'DESKTOP-OQ2C2AC\SQLEXPRESS',
+        'HOST': 'DESKTOP-5MI276Q',
         'PORT': '',
         'OPTIONS':  {
             'driver':  'ODBC Driver 17 for SQL Server'
