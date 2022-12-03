@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'TragonBAllZ'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A9B5FF9E1C2F4353A038F603FD8591B0 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CA99E801ECFE44D998AF951F35A27991 }}
