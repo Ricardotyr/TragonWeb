@@ -53,8 +53,8 @@ class MateriaPrima(models.Model):
     codigo_materiaprima = models.CharField(db_column='Codigo_MateriaPrima', max_length=50, blank=True, null=True)  # Field name made lowercase.
     nombre_materiaprima = models.CharField(db_column='Nombre_MateriaPrima', max_length=50)  # Field name made lowercase.
     descripcion_materiaprima = models.CharField(db_column='Descripcion_MateriaPrima', max_length=100, blank=True, null=True)  # Field name made lowercase.
-    stock_materiaprima = models.DecimalField(db_column='Stock_MateriaPrima', max_digits=28, decimal_places=0)  # Field name made lowercase.
-    preciocompra_materiaprima = models.DecimalField(db_column='PrecioCompra_MateriaPrima', max_digits=28, decimal_places=0)  # Field name made lowercase.
+    stock_materiaprima = models.IntegerField(db_column='Stock_MateriaPrima')  # Field name made lowercase.
+    preciocompra_materiaprima = models.IntegerField(db_column='PrecioCompra_MateriaPrima')  # Field name made lowercase.
     estado_materiaprima = models.BooleanField(db_column='Estado_MateriaPrima')  # Field name made lowercase.
     fecharegistro_materiaprima = models.DateField(db_column='FechaRegistro_MateriaPrima')  # Field name made lowercase.
 
@@ -71,8 +71,8 @@ class ProductoElaborado(models.Model):
     nombre_producto = models.CharField(db_column='Nombre_Producto', max_length=50)  # Field name made lowercase.
     descripcion_producto = models.CharField(db_column='Descripcion_Producto', max_length=200, blank=True, null=True)  # Field name made lowercase.
     stock_producto = models.IntegerField(db_column='Stock_Producto')  # Field name made lowercase.
-    preciocompra = models.CharField(db_column='PrecioCompra', max_length=50)  # Field name made lowercase.
-    precioventa = models.CharField(db_column='PrecioVenta', max_length=50)  # Field name made lowercase.
+    preciocompra = models.IntegerField(db_column='PrecioCompra')  # Field name made lowercase.
+    precioventa = models.IntegerField(db_column='PrecioVenta')  # Field name made lowercase.
     estado_producto = models.BooleanField(db_column='Estado_Producto')  # Field name made lowercase.
     fecharegistroproducto = models.DateField(db_column='FechaRegistroProducto')  # Field name made lowercase.
     imagen = models.ImageField(upload_to='Imagen', blank=True, null=True)  # Field name made lowercase.
@@ -131,5 +131,17 @@ class Venta(models.Model):
     montototal_venta = models.DecimalField(db_column='MontoTotal_Venta', max_digits=28, decimal_places=0)  # Field name made lowercase.
     fecharegistroventa = models.DateField(db_column='FechaRegistroVenta')  # Field name made lowercase.
 
+class CompraPaypal(models.Model):
+    id = models.IntegerField(primary_key=True)
+    estado = models.CharField(max_length=100)
+    codigo_estado = models.CharField(max_length=100)
+    producto = models.ForeignKey(ProductoElaborado, models.DO_NOTHING)
+    total_de_la_compra = models.CharField(max_length=50)
+    nombre_cliente  = models.CharField(max_length=100)
+    apellido_cliente = models.CharField(max_length=100)
+    correo_cliente = models.CharField(max_length=100)
+    direccion_cliente = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.nombre_cliente
 

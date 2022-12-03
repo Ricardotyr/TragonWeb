@@ -32,7 +32,7 @@
             <tr>
                 <th colspan="3">
                     <div class="alert alert-danger text-center">
-                        No hay productos, agrega productos al carro.
+                        No hay productos, agregados productos al carro.
                     </div>
 
                 </th>
@@ -47,4 +47,5 @@
         </tr>
     </tfoot>
 </table>
-<a href="" class="btn btn-primary w-100 " style="background-color: #ffc340; color:black; font-weight: bold;">Realizar compra</a>
+<a href="{% url 'TragonBall:comprar' %}" class="btn btn-primary w-100 " style="background-color: #ffc340; color:black; font-weight: bold;">Realizar compra</a>
+<a href="{% url 'TragonBall:producto' %}" class="btn btn-primary w-100 mt-3 " style="background-color: #ffc340; color:black; font-weight: bold;">Seguir comprando</a>

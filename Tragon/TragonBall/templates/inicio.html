@@ -36,9 +36,6 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="{% url 'TragonBall:delivery' %}">Delivery</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link active" href="{% url 'TragonBall:nosotros' %}">Nosotros</a>
               </li>
               <li class="nav-item">
@@ -46,16 +43,12 @@
               </li>
             </ul>
 
-            <!-- Buscador -->
-            <form class="d-flex">
-              <i class="bi bi-search" style="margin-right: 10px; margin-top: 5px;"></i><input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" required>
-              <button class="btn btn-outline-success" type="submit">Buscar</button>
-            </form>
             <!-- Icons -->
-            <div class="cont-icon ">
-              <a href="{% url 'TragonBall:carro' %}" class="bi bi-cart-fill m-1"></a> 
-            </div>
+            
             {% if request.session.Email %}
+              <div class="cont-icon ">
+                <a href="{% url 'TragonBall:carro' %}" class="bi bi-cart-fill"></a> 
+              </div>
                 {{request.session.Email}} &nbsp; &nbsp; <a class="text-decoration-none" href="{% url 'TragonBall:cerrarSesion' %}">Cerrar sesión</a>
                 {% else %}
                 <div class="cont-icon">
@@ -107,12 +100,13 @@
       <!-- Tarjetas Promociones -->
       <div class="title text-center py-2">
         <img src="../static/img/Promos.png" alt="">
+        <h3 class="text-center mt-3">Estos son nuestras promociones estrellas</h3>
       </div>
       <br>
-      <div class="container mt-0 shadow-lg p-0 mb-5 bg-white rounded">
+      <div class="container">
         <div class="row mx-5">
             <div class="col ml-5 p-2">
-                <div class="card" style="width: 23rem; height: 29rem; background-color: #ffc340;">
+                <div class="card mt-0 shadow-lg p-0 mb-5 bg-white rounded" style="width: 23rem; height: 30rem;">
                     <img src="../static/img/ComboHamb.jpg" class="card-img-top" alt="..." style="width: 100%; height: 300px;">
                     <div class="card-body">
                       <h5 class="card-title">Promo 6</h5>
@@ -123,7 +117,7 @@
             </div>
     
             <div class="col ml-5 p-2">
-                <div class="card" style="width: 23rem; background-color: #ffc340;">
+                <div class="card mt-0 shadow-lg p-0 mb-5 bg-white rounded" style="width: 23rem; height: 30rem;">
                     <img src="../static/img/ComboPizz.jpeg" class="card-img-top" alt="..." style="width: 100%; height: 300px;">
                     <div class="card-body">
                       <h5 class="card-title">Promo 3</h5>
@@ -134,7 +128,7 @@
             </div>
     
             <div class="col ml-5 p-2">
-                <div class="card" style="width: 23rem; height: 29rem; background-color: #ffc340;">
+                <div class="card mt-0 shadow-lg p-0 mb-5 bg-white rounded" style="width: 23rem; height: 30rem;">
                     <img src="../static/img/promopollo.jpeg" class="card-img-top" alt="..." style="width: 100%; height: 300px;">
                     <div class="card-body">
                       <h5 class="card-title">Promo 5</h5>
@@ -153,23 +147,24 @@
       <!-- Tarjetas Productos -->
       <div class="title text-center py-2">
         <img src="../static/img/Productos.png" alt="">
+        <h3 class="text-center mt-3">Estos son nuestros productos estrellas</h3>
       </div>
       <br>
-      <div class="container shadow-lg p-0 mb-5 bg-white rounded">
+      <div class="container">
         <div class="row mx-5">
             <div class="col ml-5 p-2">
-                <div class="card shadow-sm" style="width: 23rem; background-color: #ffc340;">
+                <div class="card shadow-lg p-0 mb-5 bg-white rounded" style="width: 23rem; height: 30rem;">
                     <img src="../static/img/as.jpg" class="card-img-top" alt="..." style="width: 100%; height: 300px;">
                     <div class="card-body">
                       <h5 class="card-title">AS</h5>
                       <h6 class="card-subtitle mb-2 text-danger">$2500</h6>
-                      <p class="card-text">As de tamaño mediano hecho con carne de churrasco acompañado de palta, tomate y mayonesa.</p>
+                      <p class="card-text">As de tamaño mediano hecho con churrasco acompañado de palta, tomate y mayonesa.</p>
                     </div>
                 </div>
             </div>
     
             <div class="col ml-5 p-2">
-                <div class="card" style="width: 23rem; height: 29rem; background-color: #ffc340;">
+                <div class="card shadow-lg p-0 mb-5 bg-white rounded" style="width: 23rem;  height: 30rem; ">
                     <img src="../static/img/chorillana.jpg" class="card-img-top" alt="..." style="width: 100%; height: 300px;">
                     <div class="card-body">
                       <h5 class="card-title">Chorrillana</h5>
@@ -180,7 +175,7 @@
             </div>
     
             <div class="col ml-5 p-2">
-                <div class="card" style="width: 23rem; background-color: #ffc340;">
+                <div class="card shadow-lg p-0 mb-5 bg-white rounded" style="width: 23rem;  height: 30rem;">
                     <img src="../static/img/papas.png" class="card-img-top" alt="..." style="width: 100%; height: 300px;">
                     <div class="card-body">
                       <h5 class="card-title">Papas Supremas</h5>
@@ -199,8 +194,8 @@
       <!--Delivery-->
       <section id="delivery" >
         <form action="delivery.html">
-        <h1>Revisa si hay delivery en tu zona</h1>
-        <a href="{% url 'TragonBall:delivery' %}" class="btn btn-primary" style="background-color: yellow; color: black; font-weight: bold;">Ver zonas</a>
+        <h1>Ponte en contacto directo con nosotros!</h1>
+        <a href="{% url 'TragonBall:contacto' %}" class="btn btn-primary" style="background-color: yellow; color: black; font-weight: bold;">Ir a contacto</a>
         </form>
       </section>
       <hr>
@@ -229,10 +224,6 @@
             <div class="box text-center">
                 <h2>Ayuda pedidos</h2>
                 <div class="ayuda">
-                    <a  href="{% url 'TragonBall:delivery' %}">Localizador de comunas</a>
-                    <p></p>
-                    <a  href="#">Carro de compras</a>
-                    <p></p>
                     <a  href="{% url 'TragonBall:tiposPago' %}">Tipos de pago</a>
                 </div>
             </div>

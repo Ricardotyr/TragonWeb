@@ -36,9 +36,6 @@
                     </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'TragonBall:delivery' %}">Delivery</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link active" href="{% url 'TragonBall:nosotros' %}">Nosotros</a>
                     </li>
                     <li class="nav-item">
@@ -46,23 +43,18 @@
                     </li>
                 </ul>
 
-                <!-- Buscador -->
-                <form class="d-flex">
-                    <i class="bi bi-search" style="margin-right: 10px; margin-top: 5px;"></i><input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" required>
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
-                </form>
                 <!-- Icons -->
-                <div class="cont-icon">
-                    <a href="{% url 'TragonBall:carro' %}" class="bi bi-cart-fill m-1"></a> 
-                </div>
                 {% if request.session.Email %}
-                    {{request.session.Email}} &nbsp; &nbsp; <a class="text-decoration-none" href="{% url 'TragonBall:cerrarSesion' %}">Cerrar sesión</a>
-                    {% else %}
-                    <div class="cont-icon">
-                        <a href="{% url 'TragonBall:paginaLogin' %}" class="bi bi-person-circle"></a>
-                        <!--<a href="" class="bi bi-cart-fill"></a>-->
-                    </div>
-                    {% endif %}
+                <div class="cont-icon ">
+                <a href="{% url 'TragonBall:carro' %}" class="bi bi-cart-fill"></a> 
+                </div>
+                {{request.session.Email}} &nbsp; &nbsp; <a class="text-decoration-none" href="{% url 'TragonBall:cerrarSesion' %}">Cerrar sesión</a>
+                {% else %}
+                <div class="cont-icon">
+                  <a href="{% url 'TragonBall:paginaLogin' %}" class="bi bi-person-circle m-1"></a>
+                  <!--<a href="" class="bi bi-cart-fill"></a>-->
+                </div>
+                {% endif %}
             </div>
         </div>
     </nav>
@@ -78,7 +70,7 @@
         {% if producto %}
             {% for ProductoElaborado in producto %}
                 {% if forloop.first %}<div class="row">{% endif %}
-                <div class="col ml-5 p-2">
+                <div class="col ml-5 p-2" >
                     <div class="card shadow-lg p-0 mb-5 bg-white rounded" style="width: 23rem;">
                         <img class="card-img-top" src="{{ProductoElaborado.imagen.url}}" alt="{{ProductoElaborado.nombre_producto}}" style="width: 100%; height: 300px;">
                         <div class="card-body">
@@ -99,6 +91,7 @@
         {% endif %}
     </div> 
     <hr>
+
 
     <!----Footer-->
     <footer class="pie-pagina">
@@ -124,10 +117,6 @@
             <div class="box text-center">
                 <h2>Ayuda pedidos</h2>
                 <div class="ayuda">
-                    <a  href="{% url 'TragonBall:delivery' %}">Localizador de comunas</a>
-                    <p></p>
-                    <a  href="#">Carro de compras</a>
-                    <p></p>
                     <a  href="{% url 'TragonBall:tiposPago' %}">Tipos de pago</a>
                 </div>
             </div>

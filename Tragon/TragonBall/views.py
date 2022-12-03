@@ -1,11 +1,16 @@
 from email.message import EmailMessage
 from django.shortcuts import render, redirect
-from TragonBall.models import Cliente, ProductoElaborado
+from TragonBall.models import Cliente, ProductoElaborado, CompraPaypal
 from django.contrib import messages
 from .forms import FormularioContacto
 from django.core.mail import EmailMessage
 from django.contrib.auth import login, logout, authenticate
-
+from django.http import HttpResponse, JsonResponse
+from paypalcheckoutsdk.core import PayPalHttpClient, SandboxEnvironment
+from paypalcheckoutsdk.orders import OrdersGetRequest, OrdersCaptureRequest
+import sys, json
+from carro.carro import Carro
+#import json,random,requests
 
 # Create your views here.
 
@@ -85,7 +90,7 @@ def contacto(request):
 
             try: 
                 correo.send()
-                messages.success(request, 'Se ha enviado correctamente su mensaje')
+                messages.success(request, 'Se ha enviado correctamente su mensaje.')
                 return redirect("TragonBall:contacto")
             except:    
                 return redirect("TragonBall:contacto")
@@ -97,3 +102,7 @@ def tiposPago(request):
 
 def carro(request):
     return render(request, "carro.html")
+
+def comprar(request):
+    return render(request, "paypal/comprar.html")
+

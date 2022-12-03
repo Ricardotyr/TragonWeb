@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'TragonBall',
     'carro',
+    'paypalcheckoutsdk'
 ]
 
 MIDDLEWARE = [
@@ -81,10 +82,10 @@ WSGI_APPLICATION = 'Tragon.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
-        'NAME':'Prueba',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': 'DESKTOP-5MI276Q',
+        'NAME':'TrangonBAllZ',
+        'USER': 'Portafolio',
+        'PASSWORD': 'Duoc1234',
+        'HOST': 'protafolio.database.windows.net',
         'PORT': '',
         'OPTIONS':  {
             'driver':  'ODBC Driver 17 for SQL Server'

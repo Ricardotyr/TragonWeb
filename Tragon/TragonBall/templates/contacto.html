@@ -35,9 +35,6 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'TragonBall:delivery' %}">Delivery</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link active" href="{% url 'TragonBall:nosotros' %}">Nosotros</a>
                     </li>
                     <li class="nav-item">
@@ -45,60 +42,72 @@
                     </li>
                 </ul>
 
-                <!-- Buscador -->
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="" aria-label="Search" required>
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
-                </form>
                 <!-- Icons -->
-                <div class="cont-icon">
-                    <a href="{% url 'TragonBall:carro' %}" class="bi bi-cart-fill m-1"></a> 
-                </div>
                 {% if request.session.Email %}
-                    {{request.session.Email}} &nbsp; &nbsp; <a class="text-decoration-none" href="{% url 'TragonBall:cerrarSesion' %}">Cerrar sesión</a>
-                    {% else %}
-                    <div class="cont-icon">
-                        <a href="{% url 'TragonBall:paginaLogin' %}" class="bi bi-person-circle"></a>
-                        <!--<a href="" class="bi bi-cart-fill"></a>-->
-                    </div>
-                    {% endif %}
+                <div class="cont-icon ">
+                <a href="{% url 'TragonBall:carro' %}" class="bi bi-cart-fill"></a> 
+                </div>
+                {{request.session.Email}} &nbsp; &nbsp; <a class="text-decoration-none" href="{% url 'TragonBall:cerrarSesion' %}">Cerrar sesión</a>
+                {% else %}
+                <div class="cont-icon">
+                  <a href="{% url 'TragonBall:paginaLogin' %}" class="bi bi-person-circle m-1"></a>
+                  <!--<a href="" class="bi bi-cart-fill"></a>-->
+                </div>
+                {% endif %}
             </div>
         </div>
     </nav>
-    <hr>    
-    <section class="form-contacto d-flex justify-content-center">
-        <div class="card col-sm-10 p-3 text-center" style="background-image: url(../static/img/contactogok.png); background-repeat: no-repeat; background-position: left;">
-            <div class="mb-3">
-                
-                <img src="../static/img/Contacto.png" alt="" style="margin-left: 44%;">
-                <p></p>
-                <h4 class="text-center" style="margin-left: 44%">Escribenos un mensaje a nuestro correo electrónico.</h4>
-            </div>
-            {% if "valido" in request.GET %}
-            {% endif %}
-            <div class="mb-2 ">
-                <form action="" method="POST" class="">
-                    {% csrf_token %}
-                    <div class="mb-2">
 
-                        <div class="form-outline mb-3 text-center">
-                            <div class=" mt-2 w-100 align-items-center" style="margin-left: 20%;" for="correo">{{miFormulario.as_p}}</div>
-                            <input type="submit" value="Enviar" style="width: 29%; margin-left: 43%;">
-                            &nbsp;&nbsp;
-                            {% if messages %}
-                            {% for msg in messages %}
-                            <div class="alert alert-success mt-3 w-50" style="margin-left: 28%;" role="alert">
-                            <b>{{msg}}</b>
+    
+    <section class="form-login" style="background-image: url(../static/img/3742148.jpg); background-repeat: repeat;">
+        <form method="post">
+            <div class="mas d-flex align-items-center h-100">
+                <div class="container mt-5 mb-5">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-xl-10">
+                            <div class="card">
+                                <div class="card-body p-5">
+                                    <div class="row d-flex align-items-center">
+                                        <div class="col-md-6 col-xl-7"> 
+                                            <div class="text-center pt-md-2 pb-4 my-md-1">
+                                                <img src="../static/img/contactogok.png" style="height: 25%; width: 90%;" alt="">
+                                            </div>                                                
+                                        </div>
+                                        <div class="col-md-6 col-xl-4 text-center">
+                                            
+                                            <img src="../static/img/Contacto.png" alt="">
+                                            <p></p>
+                                            {% csrf_token %}
+                                            <div class="form-outline mb-3">
+                                                <label for="correo" class="form-label">{{miFormulario.as_p}}</label>
+
+
+                                            <div class="text-center">
+                                                <button class="btn btn-info btn.block btn-lg w-100 p-1 m-md-2" type="submit">Enviar</button>
+                                                <br>
+                                                <br>
+                                                &nbsp;&nbsp;
+                                                {% if messages %}
+                                                {% for msg in messages %}
+                                                <div class="alert alert-success" role="alert" style="margin-left: 8%;">
+                                                    <b>{{msg}}</b>
+                                                </div>                   
+                                                {% endfor %}
+                                                {% endif %}
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            {% endfor %}
-                            {% endif %}     
-                        </div>   
+                        </div>
                     </div>
-                </form>
+                </div>
             </div>
-        </div>
+        </div>   
+        </form>
     </section>
-    <hr>
+
     <!----Footer-->
     <footer class="pie-pagina">
         <div class="grupo1">
@@ -123,10 +132,6 @@
             <div class="box text-center">
                 <h2>Ayuda pedidos</h2>
                 <div class="ayuda">
-                    <a href="{% url 'TragonBall:delivery' %}">Localizador de comunas</a>
-                    <p></p>
-                    <a href="">Carro de compras</a>
-                    <p></p>
                     <a href="{% url 'TragonBall:tiposPago' %}">Tipos de pago</a>
                 </div>
             </div>

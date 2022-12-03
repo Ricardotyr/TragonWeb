@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .carro import Carro
-from TragonBall.models import ProductoElaborado
+from TragonBall.models import *
 from django.shortcuts import redirect
 
 # Create your views here.

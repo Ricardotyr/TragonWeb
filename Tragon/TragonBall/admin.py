@@ -1,5 +1,5 @@
 from django.contrib import admin
-from.models import Cliente,Rol,Venta,DetalleVenta,DetalleCompra,Compra,Permiso,Usuario,TipoPago,Proveedor,Categoria,MateriaPrima,ProductoElaborado
+from.models import Cliente,Rol,Venta,DetalleVenta,DetalleCompra,Compra,Permiso,Usuario,TipoPago,Proveedor,Categoria,MateriaPrima,ProductoElaborado, CompraPaypal
 
 admin.site.register(Cliente)
 admin.site.register(Rol)
@@ -14,5 +14,6 @@ admin.site.register(Proveedor)
 admin.site.register(Categoria)
 admin.site.register(MateriaPrima)
 admin.site.register(ProductoElaborado)
+admin.site.register(CompraPaypal)
 
 
